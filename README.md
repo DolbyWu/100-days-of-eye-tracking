@@ -4,6 +4,10 @@ Creative coding with the eyes: an ongoing collection of interactive artworks exp
 
 眼动创意编程 100 天：用凝视、扫视和眨眼探索互动艺术。
 
+[![Blink Bloom — violet membrane network with a bright pink-white bloom](days/001-blink-bloom/media/blink-bloom-01.png)](days/001-blink-bloom/)
+
+[View all three screenshots](days/001-blink-bloom/#gallery)
+
 ## Works
 
 | Day | Work | Interaction | Runtime |

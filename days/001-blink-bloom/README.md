@@ -6,6 +6,16 @@ A living violet and magenta membrane on a deep blue-black field. Gaze pulls and 
 
 凝视推开网状组织，眨眼让粉白色脉冲沿网络向四周蔓延。
 
+## Gallery
+
+Screenshots supplied by the artist, captured in Donut MIDI Workshop.
+
+![Blink Bloom — bright pulse across the organic network](media/blink-bloom-01.png)
+
+![Blink Bloom — another captured pulse state](media/blink-bloom-02.png)
+
+![Blink Bloom — violet and magenta membrane texture](media/blink-bloom-03.png)
+
 ## Run
 
 Copy all of [sketch.js](sketch.js) into the current [Donut MIDI Workshop Editor](https://sharkburger.github.io/donut-midi/library/editor.html), replacing the previous sketch, and press **Run**. Paste JavaScript only, without Markdown fences or HTML tags.
