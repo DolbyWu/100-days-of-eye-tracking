@@ -2,7 +2,7 @@
 
 Creative coding with the eyes: an ongoing collection of interactive artworks exploring gaze, blinks, living textures and visual feedback.
 
-[![Blink Bloom — violet membrane network with a bright pink-white bloom](days/004-blink-bloom/media/blink-bloom-01.png)](days/004-blink-bloom/)
+[![Watch Day 004 — Blink Bloom on YouTube](days/004-blink-bloom/media/blink-bloom-video-cover.png)](https://youtu.be/rY8b1xuCErE)
 
 [Watch Day 004 — Blink Bloom on YouTube](https://youtu.be/rY8b1xuCErE) · [View all three screenshots](days/004-blink-bloom/#gallery)
 
