@@ -4,6 +4,12 @@
 
 A living violet and magenta membrane on a deep blue-black field. Gaze pulls and bends its porous filaments; a blink launches a bright pink-white impulse that travels outward through the network.
 
+## Video
+
+[![Watch Day 004 — Blink Bloom on YouTube](media/blink-bloom-01.png)](https://youtu.be/rY8b1xuCErE)
+
+[Watch the video on YouTube →](https://youtu.be/rY8b1xuCErE)
+
 ## Gallery
 
 Screenshots supplied by the artist, captured in Donut MIDI Workshop.

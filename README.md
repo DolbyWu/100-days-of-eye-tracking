@@ -4,7 +4,7 @@ Creative coding with the eyes: an ongoing collection of interactive artworks exp
 
 [![Blink Bloom — violet membrane network with a bright pink-white bloom](days/004-blink-bloom/media/blink-bloom-01.png)](days/004-blink-bloom/)
 
-[View all three screenshots](days/004-blink-bloom/#gallery)
+[Watch Day 004 — Blink Bloom on YouTube](https://youtu.be/rY8b1xuCErE) · [View all three screenshots](days/004-blink-bloom/#gallery)
 
 ## Works
 
