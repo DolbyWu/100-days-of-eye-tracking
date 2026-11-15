@@ -1,10 +1,8 @@
-# Day 001 — Blink Bloom
+# Day 004 — Blink Bloom
 
 **Creative coding × eye tracking**
 
 A living violet and magenta membrane on a deep blue-black field. Gaze pulls and bends its porous filaments; a blink launches a bright pink-white impulse that travels outward through the network.
-
-凝视推开网状组织，眨眼让粉白色脉冲沿网络向四周蔓延。
 
 ## Gallery
 
