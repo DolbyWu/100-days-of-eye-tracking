@@ -6,6 +6,10 @@ Creative coding with the eyes: an ongoing collection of interactive artworks exp
 
 [Watch Day 004 — Blink Bloom on YouTube](https://youtu.be/rY8b1xuCErE) · [View all three screenshots](days/004-blink-bloom/#gallery)
 
+[![Try with mouse](days/004-blink-bloom/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/004-blink-bloom/demo/)
+
+Move your mouse to stroke the network. Click to simulate a blink. No editor setup or eye tracker required.
+
 ## Works
 
 | Day | Work | Interaction | Runtime |
@@ -19,7 +23,7 @@ Creative coding with the eyes: an ongoing collection of interactive artworks exp
 3. Press **Run**. Move the mouse to stir the network and click to simulate a blink.
 4. For live input, connect Pupil Labs Neon using the Workshop's existing connection controls, then capture the two-second open-eye reference.
 
-This repository contains Workshop sketches, not a standalone eye tracker. Each work documents its runtime requirements and verification limits. Series numbers identify entries, not consecutive calendar days.
+This repository contains Workshop sketches and a standalone mouse playground, not a standalone eye tracker. Each work documents its runtime requirements and verification limits. Series numbers identify entries, not consecutive calendar days.
 
 ## Project structure
 

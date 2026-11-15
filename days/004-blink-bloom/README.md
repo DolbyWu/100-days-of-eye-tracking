@@ -4,6 +4,12 @@
 
 A living violet and magenta membrane on a deep blue-black field. Gaze pulls and bends its porous filaments; a blink launches a bright pink-white impulse that travels outward through the network.
 
+## Try it
+
+[![Try with mouse](media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/004-blink-bloom/demo/)
+
+Move the mouse to deform the network; click to simulate a blink and launch a bright impulse. The playground opens directly in mouse mode, with no installation or eye tracker required. For live eye tracking, use the Workshop instructions below.
+
 ## Video
 
 [![Watch Day 004 — Blink Bloom on YouTube](media/blink-bloom-video-cover.png)](https://youtu.be/rY8b1xuCErE)
@@ -69,4 +75,4 @@ JavaScript syntax was checked. Automated checks with a simulated p5 host exercis
 - [Donut MIDI](https://github.com/sharkburger/donut-midi/tree/aoi-cognitive-voices): Workshop runtime, p5 Neon integration, calibration and experimental BlinkGate.
 - [p5.js](https://p5js.org/): creative coding runtime.
 
-This is an independently written Workshop sketch inspired by those works, not a port or redistribution of their shader code. Runtime dependencies are supplied by Donut MIDI and are not bundled here.
+This is an independently written Workshop sketch inspired by those works, not a port or redistribution of their shader code. The Workshop supplies runtime dependencies for editor use. The standalone mouse playground bundles the required runtime; see [third-party notices](demo/THIRD_PARTY_NOTICES.md).
