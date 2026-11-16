@@ -12,6 +12,18 @@ Move to seed living trails and temporarily part connections. Click to simulate a
 
 [Watch the Day 006 video on YouTube](https://youtu.be/gvRgO1a0wig)
 
+## Day 005 — Golden Colonies
+
+[![Day 005 — uneven golden colonies surrounded by winding filaments](days/005-golden-colonies/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/)
+
+**Gaze seeds. Trails grow. Connections part, then heal.**
+
+Made in our **Eye5.js / Donut MIDI Workshop Editor**, Golden Colonies turns gaze into living particle strokes beneath a golden, Physarum-inspired landscape. Uneven colonies slowly expand and contract. Moving your eyes temporarily parts their connections; looking away lets them heal. A blink sends a luminous impulse through the network.
+
+[![Try with mouse](days/004-blink-bloom/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/)
+
+[Explore Day 005: code, controls and process](days/005-golden-colonies/) · Move your mouse to simulate gaze; click to simulate a blink.
+
 ## Daily index
 
 | Day | Work | Code and notes | Mouse playground |

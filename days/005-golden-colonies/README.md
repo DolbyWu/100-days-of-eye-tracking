@@ -8,6 +8,10 @@ Uneven golden colonies slowly expand and contract, surrounded by winding filamen
 
 This entry preserves the golden colony version, including its blink-freeze fix. It is separate from the experimental neuron-arbor version.
 
+[![Golden Colonies — procedural artwork preview](media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/)
+
+*Cover generated from this entry's sketch renderer; not an eye-tracker recording.*
+
 ## Try with a mouse
 
 [![Try with mouse](../004-blink-bloom/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/)
