@@ -10,6 +10,8 @@ Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Edit
 
 Move to seed living trails and temporarily part connections. Click to simulate a blink. No eye tracker is required. Day 006 adds bright green neurons, higher-resolution rendering and a bounded blink-propagation calculation.
 
+[Watch the Day 006 video on YouTube](https://youtu.be/gvRgO1a0wig)
+
 ## Daily index
 
 | Day | Work | Code and notes | Mouse playground |

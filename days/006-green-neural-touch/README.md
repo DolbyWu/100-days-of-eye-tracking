@@ -4,6 +4,12 @@
 
 Touch a neural landscape with your eyes. Gaze seeds bright green particle trails beneath a network of branching neurons. Looking across a connection temporarily parts it; moving away lets it reconnect. A blink launches a luminous green impulse through the tissue.
 
+## Video
+
+[![Watch Day 006 — Green Neural Touch on YouTube](media/preview.png)](https://youtu.be/gvRgO1a0wig)
+
+[Watch Day 006 on YouTube](https://youtu.be/gvRgO1a0wig) — created in our Eye5.js / Donut MIDI Workshop Editor.
+
 ## Try it
 
 [![Try with mouse](media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/)
