@@ -22,6 +22,8 @@ Made in our **Eye5.js / Donut MIDI Workshop Editor**, Golden Colonies turns gaze
 
 [![Try with mouse](days/004-blink-bloom/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/)
 
+[Watch the Day 005 video on YouTube](https://youtu.be/qlUA3l-EwDk)
+
 [Explore Day 005: code, controls and process](days/005-golden-colonies/) · Move your mouse to simulate gaze; click to simulate a blink.
 
 ## Daily index

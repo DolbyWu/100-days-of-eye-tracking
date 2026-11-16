@@ -12,6 +12,12 @@ This entry preserves the golden colony version, including its blink-freeze fix. 
 
 *Cover generated from this entry's sketch renderer; not an eye-tracker recording.*
 
+## Video
+
+[Watch Day 005 — Golden Colonies on YouTube](https://youtu.be/qlUA3l-EwDk)
+
+Created in our Eye5.js / Donut MIDI Workshop Editor: gaze seeds living trails, connections part and heal, and blinks send luminous impulses through the network.
+
 ## Try with a mouse
 
 [![Try with mouse](../004-blink-bloom/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/)
