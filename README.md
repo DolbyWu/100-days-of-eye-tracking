@@ -15,6 +15,13 @@ Move your mouse to stroke the network. Click to simulate a blink. No editor setu
 | Day | Work | Interaction | Runtime |
 | --- | --- | --- | --- |
 | 004 | [Blink Bloom](days/004-blink-bloom/) | Gaze bends an organic network; blinks send bright impulses through it | Donut MIDI Workshop / p5.js |
+| 005 | [Golden Colonies](days/005-golden-colonies/) | Gaze seeds living trails; golden connections part, heal and pulse with blinks | Our Eye5.js / Donut MIDI Workshop · p5.js |
+
+## Latest: Day 005 — Golden Colonies
+
+[![Try with mouse](days/004-blink-bloom/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/)
+
+Gaze seeds. Trails grow. Connections part, then heal. [Read the interaction and algorithm notes](days/005-golden-colonies/).
 
 ## Start with Day 004
 
@@ -27,4 +34,4 @@ This repository contains Workshop sketches and a standalone mouse playground, no
 
 ## Project structure
 
-Each entry lives in `days/NNN-title/`, with its own sketch and description. Entries follow the artist’s 100-day project numbering. This repository currently documents Day 004; other days will be added separately.
+Each entry lives in `days/NNN-title/`, with its own sketch and description. Entries follow the artist’s 100-day project numbering. This repository currently documents Days 004 and 005; other days will be added separately.
