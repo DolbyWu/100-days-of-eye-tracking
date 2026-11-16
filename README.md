@@ -1,37 +1,36 @@
 # 100 Days of Eye Tracking
 
-Creative coding with the eyes: an ongoing collection of interactive artworks exploring gaze, blinks, living textures and visual feedback.
+Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Editor**. Each day has its own code, notes and mouse playground.
 
-[![Watch Day 004 — Blink Bloom on YouTube](days/004-blink-bloom/media/blink-bloom-video-cover.png)](https://youtu.be/rY8b1xuCErE)
+## Latest — Day 006: Green Neural Touch
 
-[Watch Day 004 — Blink Bloom on YouTube](https://youtu.be/rY8b1xuCErE) · [View all three screenshots](days/004-blink-bloom/#gallery)
+[![Green Neural Touch — bright green recursive neurons](days/006-green-neural-touch/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/)
 
-[![Try with mouse](days/004-blink-bloom/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/004-blink-bloom/demo/)
+[![Try with mouse](days/006-green-neural-touch/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/)
 
-Move your mouse to stroke the network. Click to simulate a blink. No editor setup or eye tracker required.
+Move to seed living trails and temporarily part connections. Click to simulate a blink. No eye tracker is required. Day 006 adds bright green neurons, higher-resolution rendering and a bounded blink-propagation calculation.
 
-## Works
+## Daily index
 
-| Day | Work | Interaction | Runtime |
+| Day | Work | Code and notes | Mouse playground |
 | --- | --- | --- | --- |
-| 004 | [Blink Bloom](days/004-blink-bloom/) | Gaze bends an organic network; blinks send bright impulses through it | Donut MIDI Workshop / p5.js |
-| 005 | [Golden Colonies](days/005-golden-colonies/) | Gaze seeds living trails; golden connections part, heal and pulse with blinks | Our Eye5.js / Donut MIDI Workshop · p5.js |
+| 004 | Blink Bloom | [Open Day 004](days/004-blink-bloom/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/004-blink-bloom/demo/) |
+| 005 | Golden Colonies | [Open Day 005](days/005-golden-colonies/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/) |
+| 006 | Green Neural Touch | [Open Day 006](days/006-green-neural-touch/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/) |
 
-## Latest: Day 005 — Golden Colonies
+Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sketch.js`, and a `demo/index.html`. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
-[![Try with mouse](days/004-blink-bloom/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/)
+## Run with eye tracking
 
-Gaze seeds. Trails grow. Connections part, then heal. [Read the interaction and algorithm notes](days/005-golden-colonies/).
+1. Open [our Eye5.js / Donut MIDI Workshop Editor](https://sharkburger.github.io/donut-midi/library/editor.html).
+2. Copy a day's complete `sketch.js`, replace the editor code and press **Run**.
+3. Explore with the mouse first, or connect Pupil Labs Neon using the existing input controls.
+4. For live blinks, capture a two-second open-eye reference. See each day's requirements and controls.
 
-## Start with Day 004
+The mouse playgrounds run directly in the browser. Live eye tracking requires the Workshop and its local Neon connector. Device and visual-verification limits are documented per work.
 
-1. Open the [Donut MIDI Workshop](https://sharkburger.github.io/donut-midi/library/editor.html).
-2. Open [the sketch](days/004-blink-bloom/sketch.js), copy its full contents and replace the code in the Workshop Editor.
-3. Press **Run**. Move the mouse to stir the network and click to simulate a blink.
-4. For live input, connect Pupil Labs Neon using the Workshop's existing connection controls, then capture the two-second open-eye reference.
+## Day 004 video and gallery
 
-This repository contains Workshop sketches and a standalone mouse playground, not a standalone eye tracker. Each work documents its runtime requirements and verification limits. Series numbers identify entries, not consecutive calendar days.
+[![Watch Blink Bloom on YouTube](days/004-blink-bloom/media/blink-bloom-video-cover.png)](https://youtu.be/rY8b1xuCErE)
 
-## Project structure
-
-Each entry lives in `days/NNN-title/`, with its own sketch and description. Entries follow the artist’s 100-day project numbering. This repository currently documents Days 004 and 005; other days will be added separately.
+[Watch on YouTube](https://youtu.be/rY8b1xuCErE) · [View the screenshots](days/004-blink-bloom/#gallery)
