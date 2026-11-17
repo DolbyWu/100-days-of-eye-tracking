@@ -24,6 +24,8 @@ Open a PDF and read by scrolling up and down. A pink glass crawler follows your 
 
 [![Try with mouse](days/008-pdf-eater/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/)
 
+[Watch the Day 008 video on YouTube](https://www.youtube.com/watch?v=nGaAd_f6uzQ)
+
 [Day 008 code, controls and process](days/008-pdf-eater/) · Upload a PDF locally; move to guide, hold to feed.
 
 ## Day 007: Glass Crawler

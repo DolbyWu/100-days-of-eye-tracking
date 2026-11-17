@@ -8,6 +8,12 @@ Upload a PDF, scroll through its pages, and let a pink glass crawler follow your
 
 [![PDF Eater — glass crawler eating a reading surface](media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/)
 
+## Video
+
+[Watch Day 008 — PDF Eater on YouTube](https://www.youtube.com/watch?v=nGaAd_f6uzQ)
+
+Created in our Eye5.js / Donut MIDI Workshop Editor.
+
 ## Try it
 
 [![Try with mouse](media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/)
