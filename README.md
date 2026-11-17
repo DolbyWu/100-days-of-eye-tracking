@@ -2,7 +2,19 @@
 
 Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Editor**. Each day has its own code, notes and mouse playground.
 
-## Latest — Day 007: Glass Crawler
+## Latest — Day 008: PDF Eater
+
+[![PDF Eater — a glass crawler consumes a reading surface](days/008-pdf-eater/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/)
+
+**Your attention feeds the creature. The page remembers.**
+
+Open a PDF and read by scrolling up and down. A pink glass crawler follows your gaze and eats a growing hole when it catches your reading position. Move away to stop; restore the document whenever you like. Your original PDF stays unchanged.
+
+[![Try with mouse](days/008-pdf-eater/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/)
+
+[Day 008 code, controls and process](days/008-pdf-eater/) · Upload a PDF locally; move to guide, hold to feed.
+
+## Day 007: Glass Crawler
 
 [![Glass Crawler — pink glass rings and eight articulated legs on monochrome mycelium](days/007-glass-crawler/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/)
 
@@ -46,6 +58,7 @@ Made in our **Eye5.js / Donut MIDI Workshop Editor**, Golden Colonies turns gaze
 | 005 | Golden Colonies | [Open Day 005](days/005-golden-colonies/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/) |
 | 006 | Green Neural Touch | [Open Day 006](days/006-green-neural-touch/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/) |
 | 007 | Glass Crawler | [Open Day 007](days/007-glass-crawler/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/) |
+| 008 | PDF Eater | [Open Day 008](days/008-pdf-eater/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/) |
 
 Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sketch.js`, and a `demo/index.html`. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
