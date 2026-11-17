@@ -2,7 +2,19 @@
 
 Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Editor**. Each day has its own code, notes and mouse playground.
 
-## Latest — Day 006: Green Neural Touch
+## Latest — Day 007: Glass Crawler
+
+[![Glass Crawler — pink glass rings and eight articulated legs on monochrome mycelium](days/007-glass-crawler/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/)
+
+**Your gaze leads. The creature follows. Every footstep changes the network.**
+
+A translucent pink ring-body crawler explores breathing black-and-white mycelium. Its eight legs leave green contact ripples and fading branching traces. Catching your gaze sends green light along the legs and releases a network impulse.
+
+[![Try with mouse](days/007-glass-crawler/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/)
+
+[Day 007 code, controls and process](days/007-glass-crawler/) · Move to guide; catch the target to pulse.
+
+## Day 006: Green Neural Touch
 
 [![Green Neural Touch — bright green recursive neurons](days/006-green-neural-touch/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/)
 
@@ -33,6 +45,7 @@ Made in our **Eye5.js / Donut MIDI Workshop Editor**, Golden Colonies turns gaze
 | 004 | Blink Bloom | [Open Day 004](days/004-blink-bloom/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/004-blink-bloom/demo/) |
 | 005 | Golden Colonies | [Open Day 005](days/005-golden-colonies/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/) |
 | 006 | Green Neural Touch | [Open Day 006](days/006-green-neural-touch/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/) |
+| 007 | Glass Crawler | [Open Day 007](days/007-glass-crawler/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/) |
 
 Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sketch.js`, and a `demo/index.html`. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
