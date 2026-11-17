@@ -2,7 +2,19 @@
 
 Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Editor**. Each day has its own code, notes and mouse playground.
 
-## Latest — Day 008: PDF Eater
+## Latest — Day 009: Semantic Spider
+
+[![Semantic Spider — a word-reactive glass crawler with a green reference ribbon](days/009-semantic-spider/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/)
+
+**Words become terrain. Meaning becomes movement.**
+
+A glass crawler steps onto actual PDF words. Nouns grow inside pink boxes, prepositions shake in green, and technical concepts erupt in fluorescent pink. A citation such as [2] draws its matching bibliography entry into a long green ribbon connected to the creature's tail.
+
+[![Try with mouse](days/009-semantic-spider/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/)
+
+[Day 009 code, controls and local OpenAI setup](days/009-semantic-spider/) · Local reading works without a key; contextual OpenAI analysis uses your own key through a localhost relay.
+
+## Day 008: PDF Eater
 
 [![PDF Eater — a glass crawler consumes a reading surface](days/008-pdf-eater/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/)
 
@@ -59,6 +71,7 @@ Made in our **Eye5.js / Donut MIDI Workshop Editor**, Golden Colonies turns gaze
 | 006 | Green Neural Touch | [Open Day 006](days/006-green-neural-touch/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/) |
 | 007 | Glass Crawler | [Open Day 007](days/007-glass-crawler/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/) |
 | 008 | PDF Eater | [Open Day 008](days/008-pdf-eater/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/) |
+| 009 | Semantic Spider | [Open Day 009](days/009-semantic-spider/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/) |
 
 Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sketch.js`, and a `demo/index.html`. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
