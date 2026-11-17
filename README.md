@@ -36,6 +36,8 @@ A translucent pink ring-body crawler explores breathing black-and-white mycelium
 
 [![Try with mouse](days/007-glass-crawler/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/)
 
+[Watch the Day 007 video on YouTube](https://youtu.be/L-U_Fgt3GtQ)
+
 [Day 007 code, controls and process](days/007-glass-crawler/) · Move to guide; catch the target to pulse.
 
 ## Day 006: Green Neural Touch

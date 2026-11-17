@@ -6,6 +6,12 @@ A glass-like pink creature follows your gaze across a breathing monochrome Physa
 
 [![Glass Crawler — rendered artwork preview](media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/)
 
+## Video
+
+[Watch Day 007 — Glass Crawler on YouTube](https://youtu.be/L-U_Fgt3GtQ)
+
+Created in our Eye5.js / Donut MIDI Workshop Editor.
+
 ## Try it
 
 [![Try with mouse](media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/)
