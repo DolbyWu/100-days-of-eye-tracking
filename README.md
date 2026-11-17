@@ -12,6 +12,8 @@ A glass crawler steps onto actual PDF words. Nouns grow inside pink boxes, prepo
 
 [![Try with mouse](days/009-semantic-spider/media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/)
 
+[Watch the Day 009 video on YouTube](https://youtu.be/7BN3-eKv-7M)
+
 [Day 009 code, controls and local OpenAI setup](days/009-semantic-spider/) · Local reading works without a key; contextual OpenAI analysis uses your own key through a localhost relay.
 
 ## Day 008: PDF Eater

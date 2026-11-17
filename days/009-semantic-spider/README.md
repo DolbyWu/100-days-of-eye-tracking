@@ -6,6 +6,12 @@ A glass crawler turns reading into a physical encounter with words. Its eight ar
 
 [![Semantic Spider — pink word reactions and a green reference ribbon](media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/)
 
+## Video
+
+[Watch Day 009 — Semantic Spider on YouTube](https://youtu.be/7BN3-eKv-7M)
+
+Created in our Eye5.js / Donut MIDI Workshop Editor.
+
 ## Try it with a mouse
 
 [![Try with mouse](media/try-mouse.svg)](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/)
