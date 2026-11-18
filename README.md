@@ -2,7 +2,13 @@
 
 Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Editor**. Each day has its own code, notes and mouse playground.
 
-## Latest — Day 009: Semantic Spider
+## Latest — Day 010: Reading Observatory
+
+A glass crawler follows your gaze across a PDF while a live dashboard charts where you look and what the creature touches. Read with a per-page heatmap, watch gaze and pupil traces, and see word and citation contacts accumulate in the radar and bar charts.
+
+[Try with mouse](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) · [Day 010 code and Neon setup](days/010-reading-observatory/)
+
+## Day 009: Semantic Spider
 
 [![Semantic Spider — a word-reactive glass crawler with a green reference ribbon](days/009-semantic-spider/media/preview.png)](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/)
 
@@ -78,6 +84,7 @@ Made in our **Eye5.js / Donut MIDI Workshop Editor**, Golden Colonies turns gaze
 | 007 | Glass Crawler | [Open Day 007](days/007-glass-crawler/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/) |
 | 008 | PDF Eater | [Open Day 008](days/008-pdf-eater/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/) |
 | 009 | Semantic Spider | [Open Day 009](days/009-semantic-spider/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/) |
+| 010 | Reading Observatory | [Open Day 010](days/010-reading-observatory/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) |
 
 Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sketch.js`, and a `demo/index.html`. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
