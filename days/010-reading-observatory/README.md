@@ -2,7 +2,7 @@
 
 A live dashboard for reading with your eyes, built in our Eye5.js / Donut MIDI Workshop Editor. The glass crawler from Day 009 follows your gaze across a PDF. Its footfalls turn words into effects and feed a live radar and vertical bar chart.
 
-[Try the mouse demo](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) · [Get the Eye5.js sketch](sketch.js)
+[Try the mouse demo](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) · [Get the Eye5.js sketch](sketch.js) · [Watch the Day 010 Short on YouTube](https://www.youtube.com/shorts/KJUBxSQt9Os)
 
 ## Read and explore
 

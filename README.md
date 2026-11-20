@@ -19,15 +19,17 @@ Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sk
 
 ## Latest — Day 011: Semantic Transfer
 
+[![Day 011 screenshot showing the glass crawler, flying words, and live reading dashboard](days/011-semantic-transfer/media/day11.png)](https://youtube.com/shorts/OEPCC99ibe0)
+
 A glass crawler turns PDF reading into a song. Words fly from the page into a live dashboard, citations ring out in an ascending chime, and section changes shift the harmony.
 
-[Try with mouse](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) · [Day 011 code and setup](days/011-semantic-transfer/)
+[Try with mouse](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) · [Day 011 code and setup](days/011-semantic-transfer/) · [Watch the Day 011 Short on YouTube](https://youtube.com/shorts/OEPCC99ibe0)
 
 ## Day 010: Reading Observatory
 
 A glass crawler follows your gaze across a PDF while a live dashboard charts where you look and what the creature touches. Read with a per-page heatmap, watch gaze and pupil traces, and see word and citation contacts accumulate in the radar and bar charts.
 
-[Try with mouse](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) · [Day 010 code and Neon setup](days/010-reading-observatory/)
+[Try with mouse](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) · [Day 010 code and Neon setup](days/010-reading-observatory/) · [Watch the Day 010 Short on YouTube](https://www.youtube.com/shorts/KJUBxSQt9Os)
 
 ## Day 009: Semantic Spider
 

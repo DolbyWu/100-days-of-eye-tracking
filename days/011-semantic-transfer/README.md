@@ -1,8 +1,10 @@
 # Day 011 — Semantic Transfer / Paper Song
 
+[![Day 011 screenshot showing the glass crawler, flying words, and live reading dashboard](media/day11.png)](https://youtube.com/shorts/OEPCC99ibe0)
+
 A glass crawler follows your gaze across a PDF. Step on a word and watch it fly toward a counter. The counter grows on arrival. With sound enabled, each reading path produces a different song.
 
-[Try the mouse demo](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) · [Get the Eye5.js sketch](sketch.js)
+[Try the mouse demo](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) · [Get the Eye5.js sketch](sketch.js) · [Watch the Day 011 Short on YouTube](https://youtube.com/shorts/OEPCC99ibe0)
 
 - Open a PDF and move the pointer over the page. Scroll to read or use the page arrows.
 - Click **Enable Paper Song**. Nouns, prepositions, technical terms, theory words, and citations have distinct sounds. Citations play an ascending chime and can reveal the corresponding bibliography entry. Paper sections change the harmony in A minor at 104 BPM.
