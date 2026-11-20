@@ -2,7 +2,28 @@
 
 Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Editor**. Each day has its own code, notes and mouse playground.
 
-## Latest — Day 010: Reading Observatory
+## Daily index
+
+| Day | Work | Code and notes | Mouse playground |
+| --- | --- | --- | --- |
+| 004 | Blink Bloom | [Open Day 004](days/004-blink-bloom/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/004-blink-bloom/demo/) |
+| 005 | Golden Colonies | [Open Day 005](days/005-golden-colonies/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/) |
+| 006 | Green Neural Touch | [Open Day 006](days/006-green-neural-touch/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/) |
+| 007 | Glass Crawler | [Open Day 007](days/007-glass-crawler/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/) |
+| 008 | PDF Eater | [Open Day 008](days/008-pdf-eater/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/) |
+| 009 | Semantic Spider | [Open Day 009](days/009-semantic-spider/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/) |
+| 010 | Reading Observatory | [Open Day 010](days/010-reading-observatory/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) |
+| 011 | Semantic Transfer | [Open Day 011](days/011-semantic-transfer/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) |
+
+Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sketch.js`, and a `demo/index.html`. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
+
+## Latest — Day 011: Semantic Transfer
+
+A glass crawler turns PDF reading into a song. Words fly from the page into a live dashboard, citations ring out in an ascending chime, and section changes shift the harmony.
+
+[Try with mouse](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) · [Day 011 code and setup](days/011-semantic-transfer/)
+
+## Day 010: Reading Observatory
 
 A glass crawler follows your gaze across a PDF while a live dashboard charts where you look and what the creature touches. Read with a per-page heatmap, watch gaze and pupil traces, and see word and citation contacts accumulate in the radar and bar charts.
 
@@ -73,20 +94,6 @@ Made in our **Eye5.js / Donut MIDI Workshop Editor**, Golden Colonies turns gaze
 [Watch the Day 005 video on YouTube](https://youtu.be/qlUA3l-EwDk)
 
 [Explore Day 005: code, controls and process](days/005-golden-colonies/) · Move your mouse to simulate gaze; click to simulate a blink.
-
-## Daily index
-
-| Day | Work | Code and notes | Mouse playground |
-| --- | --- | --- | --- |
-| 004 | Blink Bloom | [Open Day 004](days/004-blink-bloom/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/004-blink-bloom/demo/) |
-| 005 | Golden Colonies | [Open Day 005](days/005-golden-colonies/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/) |
-| 006 | Green Neural Touch | [Open Day 006](days/006-green-neural-touch/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/006-green-neural-touch/demo/) |
-| 007 | Glass Crawler | [Open Day 007](days/007-glass-crawler/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/007-glass-crawler/demo/) |
-| 008 | PDF Eater | [Open Day 008](days/008-pdf-eater/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/008-pdf-eater/demo/) |
-| 009 | Semantic Spider | [Open Day 009](days/009-semantic-spider/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/) |
-| 010 | Reading Observatory | [Open Day 010](days/010-reading-observatory/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) |
-
-Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sketch.js`, and a `demo/index.html`. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
 ## Run with eye tracking
 
