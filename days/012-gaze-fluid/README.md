@@ -28,6 +28,12 @@ Open [Day12-Neural-Signals.toe](Day12-Neural-Signals.toe) and keep the supplied 
 
 For the source build, run `build_td.py` and then execute `add_neural_background.py` in the same Textport using the same `DAY12` path. The artwork uses excitation and inhibition as an artistic metaphor. Gaze controls graphical responses, and the colors represent design choices. Neither is a measurement of neurotransmitter concentration or an ASD assessment.
 
+### Live camera background
+
+For the saved local camera variant, open `Day12-Neural-Camera.toe` with the same artwork asset. On the Base COMP's **Neon Camera** page, use **Camera Background** to switch between the camera composite and the artwork-only view. If the phone changes IP, copy the current **Scene RTSP** address into **Scene RTSP URL**. Use `VISUAL_RENDER/out_picture` for the combined output.
+
+To add this layer to the artwork variant from source, set `SCENE_RTSP` to the current Scene RTSP address, then execute `add_neon_camera.py` in TouchDesigner Textport. The local variant contains the current LAN endpoint and is excluded from Git. Camera decoding was verified at 1280 × 960 with the installed Non-Commercial license. The live video decoder buffers frames independently of OSC, so live gaze and video may differ in timing.
+
 ## 2. Connect Neon
 
 Keep one receiver on UDP 9012. Connect Neon to Companion and put the Mac and Companion on the same LAN. Enable **Compute eye state** and the available blink and fixation/saccade computations. Stop the demo before starting live mode. Use Python 3.10+ for the pinned SDK:
