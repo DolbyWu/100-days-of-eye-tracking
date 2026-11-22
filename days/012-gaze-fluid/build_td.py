@@ -13,8 +13,8 @@ def build(folder):
         siblings = [child for child in network.children if child != node]
         node.nodeX = (len(siblings) % 5) * 200
         node.nodeY = -(len(siblings) // 5) * 145
-        for upstream in inputs:
-            upstream.outputConnectors[0].connect(node)
+        for index, upstream in enumerate(inputs):
+            node.inputConnectors[index].connect(upstream)
         return node
 
     def resolution(node, width, height):

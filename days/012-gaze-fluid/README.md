@@ -6,7 +6,7 @@ Gaze introduces directional momentum and cyan dye. Holding your gaze builds a vo
 
 ## 1. Run simulated gaze on macOS
 
-Open a fresh TouchDesigner project and go to **Dialogs → Textport and DATs**. Paste this line with the absolute path to this Day 12 folder:
+Open [Day12-Gaze-Fluid.toe](Day12-Gaze-Fluid.toe) in TouchDesigner. To build from source instead, open a fresh project, go to **Dialogs → Textport and DATs**, and paste this line with the absolute path to this Day 12 folder:
 
 ```python
 DAY12 = "/absolute/path/to/days/012-gaze-fluid"; exec(compile(open(DAY12 + "/build_td.py", encoding="utf-8").read(), "build_td.py", "exec"))
@@ -80,7 +80,7 @@ Each Feedback TOP takes the same 256 × 256 black RGBA32F Constant TOP as its re
 - **Shader error** — point an Info DAT at the affected GLSL TOP and inspect its compile log. Verify input order and 32-bit float intermediates. Disable a global TOP resolution multiplier for the solver.
 - **Below 60 FPS** — lower render output resolution first, then reduce **Iterations** while checking the stability and look of the flow. 60 FPS is a target that requires a measurement on the installation machine.
 
-Verification on the development Mac used Apple M4 Pro, macOS, the installed TouchDesigner 2023.12480, and Python SDK 1.9.0. The six shader passes compiled and ran at 256 × 256 in a local OpenGL test harness using compatible GLSL 4.10 and stand-ins for TouchDesigner's injected declarations. The test checked that pressure projection reduced divergence and that dye persisted and dissipated after gaze was disabled. The Python tests check the control bundle and replay logic. Textport opened, but desktop input did not reach it during this run. The generated TouchDesigner network, end-to-end FPS, MP4 display and live Day 12 hardware path remain unverified. [Derivative system requirements](https://derivative.ca/UserGuide/System_Requirements)
+Verification on the development Mac used Apple M4 Pro, macOS, the installed TouchDesigner 2023.12480, and Python SDK 1.9.0. The six shader passes compiled and ran at 256 × 256 in a local OpenGL test harness using compatible GLSL 4.10 and stand-ins for TouchDesigner's injected declarations. The test checked that pressure projection reduced divergence and that dye persisted and dissipated after gaze was disabled. The Python tests check the control bundle and replay logic. TouchDesigner 2023.12480 compiled and rendered the corrected GPU network with simulated OSC input. Its debug viewer received valid live Neon gaze, pupil readings and blink counts. The live source reported invalid gaze during the final render check. Sustained 60 FPS, MP4 display, and a full live visual pass remain to be checked. [Derivative system requirements](https://derivative.ca/UserGuide/System_Requirements)
 
 ```sh
 python3 -B -m unittest discover -s tests -v
