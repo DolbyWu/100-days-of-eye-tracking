@@ -22,6 +22,12 @@ Inside `/project1/day12_gaze_fluid`, open `VISUAL_RENDER/out_picture` and `GAZE_
 
 The Base COMP's **Fluid** page exposes **Preset**, **Port**, **Iterations**, **Force**, **Swirl**, **Drag**, **Fade**, **Radius**, and output width and height. Presets apply when selected. The fluid grid stays at 256 × 256. Save the project as a new `.toe` or export its Base COMP as a `.tox` from TouchDesigner after verifying the preview.
 
+### Neural Signals artwork variant
+
+Open [Day12-Neural-Signals.toe](Day12-Neural-Signals.toe) and keep the supplied image at `media/neural-background.jpg` alongside the project folder. Use the same bridge on port 9012. The render shader uses the pink artwork regions as gaze targets. Fixation builds the pink response, while the existing fluid trail lights the nearby white structure. The direct response follows gaze validity, while the fluid residue dissipates. Scene-camera UVs drive the artwork, so precise targeting on a physical display requires a surface calibration.
+
+For the source build, run `build_td.py` and then execute `add_neural_background.py` in the same Textport using the same `DAY12` path. The artwork uses excitation and inhibition as an artistic metaphor. Gaze controls graphical responses, and the colors represent design choices. Neither is a measurement of neurotransmitter concentration or an ASD assessment.
+
 ## 2. Connect Neon
 
 Keep one receiver on UDP 9012. Connect Neon to Companion and put the Mac and Companion on the same LAN. Enable **Compute eye state** and the available blink and fixation/saccade computations. Stop the demo before starting live mode. Use Python 3.10+ for the pinned SDK:
