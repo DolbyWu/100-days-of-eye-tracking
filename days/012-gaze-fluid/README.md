@@ -56,7 +56,7 @@ The bridge's `--record` option writes a new raw CSV with exact integer nanosecon
 | `NEON_INPUT` | OSC In CHOP on the parent **Port**. Unqueued snapshots keep creative control current. |
 | `GAZE_FEATURES` | Execute DAT, Text TOP debug panel and Script TOP parameter upload. Python uploads only a 4 × 1 RGBA32F parameter texture. Position/valid/radius, velocity/dwell/dt, wave center/age/strength and force/decay each occupy one texel. |
 | `FLUID_ENGINE` | GLSL pixel passes and three persistent feedback buffers at 256 × 256 in RGBA32F. Velocity is measured in grid cells/s. The boundary wraps. |
-| `VISUAL_RENDER` | GLSL maps dye density and gradient to cyan and white filaments on black. View `out_picture`. |
+| `VISUAL_RENDER` | GLSL integrates fine grain along projected velocity and lights it with dye density and gradient to reveal cyan and white filaments on black. View `out_picture`. |
 | `RECORDING` | Frame-indexed Movie File In, `out_scene`, and Movie File Out for the artwork. The Execute DAT writes the frame sync sidecar when recording is enabled. |
 
 The builder embeds the operators and shaders in the project. For manual inspection or reconstruction, concatenate `shaders/common.glsl` and the pass's GLSL file into its Pixel Shader DAT. Use GLSL TOP in vertex/pixel mode with a default vertex shader. Wire the inputs in this order:
@@ -68,7 +68,7 @@ The builder embeds the operators and shaders in the project. For manual inspecti
 | `pressure` | pressure feedback | divergence | |
 | `project` | velocity | pressure | |
 | `dye` | dye feedback | project | parameter texture |
-| `render` | dye | | |
+| `render` | dye | projected velocity | |
 
 Each Feedback TOP takes the same 256 × 256 black RGBA32F Constant TOP as its reset input. Set their targets to `project`, `pressure`, and `dye`, respectively. Set **Passes** on `pressure` to 24 initially. This repeats Jacobi with prior-pass pressure on input 0 while divergence remains on input 1. The other stages use one pass. `velocity` backtraces the previous velocity and adds forces, `project` subtracts the discrete pressure gradient, and `dye` backtraces dye with the projected velocity. The Execute DAT advances the graph once per rendered TD frame. To clear the world, pulse all three Feedback TOPs' **Reset Pulse**. [GLSL TOP](https://derivative.ca/UserGuide/GLSL_TOP) · [GLSL TOP shader conventions](https://derivative.ca/UserGuide/Write_a_GLSL_TOP) · [Feedback TOP](https://derivative.ca/UserGuide/Feedback_TOP)
 
@@ -80,7 +80,7 @@ Each Feedback TOP takes the same 256 × 256 black RGBA32F Constant TOP as its re
 - **Shader error** — point an Info DAT at the affected GLSL TOP and inspect its compile log. Verify input order and 32-bit float intermediates. Disable a global TOP resolution multiplier for the solver.
 - **Below 60 FPS** — lower render output resolution first, then reduce **Iterations** while checking the stability and look of the flow. 60 FPS is a target that requires a measurement on the installation machine.
 
-Verification on the development Mac used Apple M4 Pro, macOS, the installed TouchDesigner 2023.12480, and Python SDK 1.9.0. The six shader passes compiled and ran at 256 × 256 in a local OpenGL test harness using compatible GLSL 4.10 and stand-ins for TouchDesigner's injected declarations. The test checked that pressure projection reduced divergence and that dye persisted and dissipated after gaze was disabled. The Python tests check the control bundle and replay logic. TouchDesigner 2023.12480 compiled and rendered the corrected GPU network with simulated OSC input. Its debug viewer received valid live Neon gaze, pupil readings and blink counts. The live source reported invalid gaze during the final render check. Sustained 60 FPS, MP4 display, and a full live visual pass remain to be checked. [Derivative system requirements](https://derivative.ca/UserGuide/System_Requirements)
+Verification on the development Mac used Apple M4 Pro, macOS, the installed TouchDesigner 2023.12480, and Python SDK 1.9.0. The six shader passes compiled and ran at 256 × 256 in a local OpenGL test harness using compatible GLSL 4.10 and stand-ins for TouchDesigner's injected declarations. The test checked that pressure projection reduced divergence and that dye persisted and dissipated after gaze was disabled. The Python tests check the control bundle and replay logic. TouchDesigner 2023.12480 compiled and rendered the corrected GPU network with simulated OSC input. A subsequent live test received valid Neon gaze, pupil readings and blink counts, compiled the filament shader in TouchDesigner, and exported an artwork frame from the live output. Sustained 60 FPS, synchronized MP4 display, and the isolated blink response remain to be checked. [Derivative system requirements](https://derivative.ca/UserGuide/System_Requirements)
 
 ```sh
 python3 -B -m unittest discover -s tests -v

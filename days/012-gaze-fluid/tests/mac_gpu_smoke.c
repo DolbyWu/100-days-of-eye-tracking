@@ -106,7 +106,7 @@ static void simulate(GLuint *p) {
             ink=texture_signal(dye[back]);
         }
     }
-    draw(p[5],image,dye[0],0,0);
+    draw(p[5],image,dye[0],velocity[0],0);
     double output=texture_signal(image), persistent=texture_signal(dye[0]);
     printf("Divergence %.4f -> %.4f; dye %.4f -> %.4f after input stops; rendered signal %.4f\n",before,after,ink,persistent,output);
     if(!(after<before && before>0 && persistent<ink && persistent>0 && output>0)) exit(8);

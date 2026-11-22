@@ -38,8 +38,8 @@ def build(folder):
         for name, value, low, high in (
             ("Port", 9012, 1, 65535), ("Iterations", 24, 1, 64),
             ("Outputwidth", 960, 64, 1280), ("Outputheight", 960, 64, 1280),
-            ("Force", 210, 0, 500), ("Swirl", 95, 0, 300),
-            ("Drag", .38, 0, 3), ("Fade", .47, 0, 3),
+            ("Force", 320, 0, 500), ("Swirl", 140, 0, 300),
+            ("Drag", .28, 0, 3), ("Fade", .19, 0, 3),
             ("Radius", .038, .012, .095),
         ):
             add = controls.appendInt if isinstance(value, int) else controls.appendFloat
@@ -85,7 +85,9 @@ def build(folder):
 
         dye_in = create(visual, selectTOP, "dye_in")
         dye_in.par.top.expr = "parent(2).op('FLUID_ENGINE/dye')"
-        render = pass_top(visual, "render", dye_in)
+        render_velocity = create(visual, selectTOP, "velocity_in")
+        render_velocity.par.top.expr = "parent(2).op('FLUID_ENGINE/project')"
+        render = pass_top(visual, "render", dye_in, render_velocity)
         render.par.resolutionw.expr = "parent(2).par.Outputwidth"
         render.par.resolutionh.expr = "parent(2).par.Outputheight"
         picture = create(visual, outTOP, "out_picture", render)
