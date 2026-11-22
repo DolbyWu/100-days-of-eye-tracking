@@ -1,0 +1,5 @@
+{
+  "filaments": {"label": "Filaments", "Force": 210, "Swirl": 95, "Drag": 0.38, "Fade": 0.47, "Iterations": 24},
+  "still": {"label": "Still water", "Force": 120, "Swirl": 64, "Drag": 0.24, "Fade": 0.31, "Iterations": 32},
+  "turbulent": {"label": "Turbulent", "Force": 335, "Swirl": 145, "Drag": 0.58, "Fade": 0.66, "Iterations": 20}
+}

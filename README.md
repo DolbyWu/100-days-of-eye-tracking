@@ -14,10 +14,17 @@ Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Edit
 | 009 | Semantic Spider | [Open Day 009](days/009-semantic-spider/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/) |
 | 010 | Reading Observatory | [Open Day 010](days/010-reading-observatory/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) |
 | 011 | Semantic Transfer | [Open Day 011](days/011-semantic-transfer/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) |
+| 012 | Gaze Fluid | [Open Day 012](days/012-gaze-fluid/) | [TouchDesigner simulation](days/012-gaze-fluid/#1-run-simulated-gaze-on-macos) |
 
-Each entry is stored in `days/NNN-title/`, with a `README.md`, a paste-ready `sketch.js`, and a `demo/index.html`. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
+Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready sketch and mouse demo. Day 012 includes a TouchDesigner build script and simulated gaze. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
-## Latest — Day 011: Semantic Transfer
+## Latest — Day 012: Gaze Fluid
+
+A TouchDesigner fluid world where gaze introduces momentum, fixations build vortices, and the dye keeps moving after gaze input stops.
+
+[Day 012 code and setup](days/012-gaze-fluid/)
+
+## Day 011: Semantic Transfer
 
 [![Day 011 screenshot showing the glass crawler, flying words, and live reading dashboard](days/011-semantic-transfer/media/day11.png)](https://youtube.com/shorts/OEPCC99ibe0)
 
