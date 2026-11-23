@@ -1,4 +1,71 @@
-# Day 012 — Gaze Fluid
+# Day 012 — Neural Signals · Gaze Fluid
+
+My first audiovisual study with **Pupil Labs Neon** and **TouchDesigner**. Looking at the neural image makes its fibres glow cyan. Pupil changes give the relief a breathing motion, and short sounds accompany each transformation.
+
+[Watch the Day 012 video on YouTube](https://youtu.be/H5AxhrK5gwA) · [Download the TouchDesigner project](Day12-Neural-Sound.toe) · [Listen to the sound demo](media/day12-sound.wav) · [Read the research and design notes](REFLECTION.md)
+
+## What I made
+
+I began by writing a Python bridge for Neon. I ran it in Terminal and used an **OSC In CHOP** in TouchDesigner to receive the gaze coordinates, blink count, pupil diameter and eyelid opening on local UDP port **9012**. The eye camera uses an RTSP video stream. The bridge tells TouchDesigner which video address to use when it connects.
+
+I then made **TD-Neon**, a small macOS launcher for that same bridge. After setup, I open the TouchDesigner project first and then open TD-Neon. The app starts the bridge and reconnects to Neon Companion. I can still run the same bridge from Terminal when I want to see the logs.
+
+| Eye input | What happens in the artwork |
+| --- | --- |
+| Move your gaze | Nearby fibres and synapses light up in cyan, with a short electronic tick that pans with gaze. |
+| Keep looking in one place | The local texture breaks into points and a granular sound enters. |
+| Pupil diameter changes | The point cloud breathes, and a soft sustained sound changes pitch and tone. |
+| Blink once | The neural relief flashes white together, with a short discharge sound. |
+| Blink three times within 1.6 seconds | The image scatters into coloured 3D points with a low burst. Each point carries its sampled colour from the reference image. |
+| Close both eyes for three seconds | The scattered points regroup with a rising sound. A short chord marks the return. |
+
+The reference image was projected onto an approximate relief in Blender, then sampled as a coloured point cloud for TouchDesigner. The open-eye view combines the photo, cyan annotations and a live eye inset. The audio runs inside TouchDesigner as stereo synthesis.
+
+## Try without Neon
+
+1. Clone this repository and open `days/012-gaze-fluid/Day12-Neural-Sound.toe` in TouchDesigner. Keep the project next to its `media` folder.
+2. Start the TouchDesigner timeline and open `/project1/day12_gaze_fluid/out_picture`.
+3. Run the demo in Terminal from `days/012-gaze-fluid`:
+
+   ```sh
+   python3 neon_bridge.py demo --neural --duration 26
+   ```
+
+The demo cycles through gaze, dwell, a single blink, a triple blink and a simulated closed-eye reset. The eye inset needs the live Neon camera. Use the **Neural Sound** page on the Day 12 COMP to set volume or mute the work.
+
+## Connect Neon with TD-Neon on macOS
+
+Use the same Wi-Fi network for the Mac and Neon Companion. Enable **Compute eye state** in Companion for pupil size, blinks and the sustained eye closure. The launcher requires Python 3.12 and the macOS Command Line Tools for its one-time build.
+
+From `days/012-gaze-fluid`, run:
+
+```sh
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements-mapping.txt
+bash macos/build-app.sh
+```
+
+1. Open **Day12-Neural-Sound.toe** in TouchDesigner and leave the timeline running.
+2. Double-click the **TD-Neon.app** built in this folder. It starts the bridge automatically. Allow Local Network access if prompted. If discovery fails, stop the bridge, enter the Companion IP, and start it again.
+3. View `/project1/day12_gaze_fluid/out_picture`. **OSC ready** in the launcher means the bridge is sending. If TouchDesigner is waiting, check that its **Port** and the app's port are both **9012**. Run one bridge per port.
+
+To run the same workflow from Terminal instead:
+
+```sh
+.venv/bin/python neon_bridge.py --port 9012 live --eye-features
+```
+
+Add `--device COMPANION_IP` for a direct connection. If the eye video needs a manual address, turn off **Follow Bridge Eye Video URL** and paste the **Eye RTSP** URL from the log into the project’s eye URL field.
+
+Source: [OSC schema](OSC.md) · [bridge](neon_bridge.py) · [point cloud](neural_cloud_td.py) · [synthesizer](neural_audio_td.py) · [Pupil Labs Real-Time API](https://docs.pupil-labs.com/neon/real-time-api/).
+
+## Research inspiration
+
+A neuroscientist’s discussion of autism and sensory experience inspired this piece. Light, sound, pressure and chemical molecules can change the electrical activity of sensory receptors. That conversion is called **sensory transduction**. From there I became interested in how different kinds of neural signalling might shape sensory experience. Research in autism has investigated glutamate, GABA, dopamine, serotonin, norepinephrine and the neuropeptide oxytocin. These are different research leads, and no single transmitter explains the autism spectrum. The evidence and the original inspiration are discussed in [the research notes](REFLECTION.md#what-inspired-it).
+
+I used gaze, pupil diameter and blinking as controls for an artistic translation of an input into light, motion and sound. The instrument records eye signals. It does not measure anyone’s neurotransmitters, diagnose autism or recreate an autistic person’s sensory experience.
+
+## Earlier Gaze Fluid studies
 
 > What if looking did not simply select or control an object, but introduced forces into a world that continued to move beyond our gaze?
 
@@ -28,11 +95,21 @@ Open [Day12-Neural-Signals.toe](Day12-Neural-Signals.toe) and keep the supplied 
 
 For the source build, run `build_td.py` and then execute `add_neural_background.py` in the same Textport using the same `DAY12` path. The artwork uses excitation and inhibition as an artistic metaphor. Gaze controls graphical responses, and the colors represent design choices. Neither is a measurement of neurotransmitter concentration or an ASD assessment.
 
+### Eye inset recovery and experimental procedural variant
+
+Open `Day12-Recovery-Eye-Inset.toe` for the last observed working eye inset. The procedural neuron and pupil-candidate shaders are preserved in `shaders/neural_particles.glsl` and `shaders/eye_inset_v2.glsl` for isolated testing. The assembled experimental `.toe` files crashed TouchDesigner 2023.12480 during load and were renamed `.toe.unstable`; do not use them for a live session. A macOS crash report points to TouchDesigner's DAT loading path, but does not identify a specific source line. Shader compilation in a standalone OpenGL harness does not validate loading the edited TouchDesigner project.
+
+For live interaction, this project listens on local OSC port **9012**. Neon Companion's API at `DEVICE_IP:8080` and eye RTSP at `DEVICE_IP:8086` are separate connections. The older TD-Neon launcher defaults to OSC **9000**; set its TouchDesigner port to **9012**, or run the Day 12 `neon_bridge.py` with `--port 9012 live --device DEVICE_IP`. Check `GAZE_FEATURES/debug` for `receiving | valid 1`.
+
 ### Live camera background
 
 For the saved local camera variant, open `Day12-Neural-Camera.toe` with the same artwork asset. On the Base COMP's **Neon Camera** page, use **Camera Background** to switch between the camera composite and the artwork-only view. If the phone changes IP, copy the current **Scene RTSP** address into **Scene RTSP URL**. Use `VISUAL_RENDER/out_picture` for the combined output.
 
 To add this layer to the artwork variant from source, set `SCENE_RTSP` to the current Scene RTSP address, then execute `add_neon_camera.py` in TouchDesigner Textport. The local variant contains the current LAN endpoint and is excluded from Git. Camera decoding was verified at 1280 × 960 with the installed Non-Commercial license. The live video decoder buffers frames independently of OSC, so live gaze and video may differ in timing.
+
+### AprilTag screen mapping and live eye video overlay
+
+The opt-in mapped mode adds four AprilTags to the visible TouchDesigner output, reads them from Neon's scene camera, and converts scene gaze to the actual artwork plane. It also detects pupil candidates and eye-video change regions, then adds circles, boxes, numerical labels and lines to the small eye inset. The working recovery project remains unchanged on disk. See [the step-by-step setup](SURFACE_SETUP.md) before using this mode. The currently connected Neon returned HTTP 404 for its camera calibration endpoint, so the bridge uses a marker-derived planar homography and invalidates gaze when the surface is lost. The eye-video detections are optical estimates; the millimeter pupil diameters come from Neon eye-state telemetry.
 
 ## 2. Connect Neon
 

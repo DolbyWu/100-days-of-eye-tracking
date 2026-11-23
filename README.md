@@ -1,6 +1,6 @@
 # 100 Days of Eye Tracking
 
-Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Editor**. Each day has its own code, notes and mouse playground.
+Creative coding with the eyes. Earlier entries use the **Eye5.js / Donut MIDI Workshop Editor**. Day 012 connects **Pupil Labs Neon** to **TouchDesigner** for a live audiovisual experiment.
 
 ## Daily index
 
@@ -14,15 +14,15 @@ Creative coding with the eyes, built in our **Eye5.js / Donut MIDI Workshop Edit
 | 009 | Semantic Spider | [Open Day 009](days/009-semantic-spider/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/009-semantic-spider/demo/) |
 | 010 | Reading Observatory | [Open Day 010](days/010-reading-observatory/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) |
 | 011 | Semantic Transfer | [Open Day 011](days/011-semantic-transfer/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) |
-| 012 | Gaze Fluid | [Open Day 012](days/012-gaze-fluid/) | [TouchDesigner simulation](days/012-gaze-fluid/#1-run-simulated-gaze-on-macos) |
+| 012 | Neural Signals · Gaze Fluid | [Open Day 012](days/012-gaze-fluid/) | [TouchDesigner demo](days/012-gaze-fluid/#try-without-neon) |
 
 Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready sketch and mouse demo. Day 012 includes a TouchDesigner build script and simulated gaze. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
-## Latest — Day 012: Gaze Fluid
+## Latest — Day 012: Neural Signals · Gaze Fluid
 
-A TouchDesigner fluid world where gaze introduces momentum, fixations build vortices, and the dye keeps moving after gaze input stops.
+Look to light up a neural image in cyan. Blink to send a white pulse. Blink three times to scatter it into a textured point cloud, then close both eyes for three seconds to bring it back. Each gesture has its own synthesized sound. The work takes inspiration from sensory transduction and research on neural signalling in autism.
 
-[Day 012 code and setup](days/012-gaze-fluid/)
+[Watch the Day 012 video on YouTube](https://youtu.be/H5AxhrK5gwA) · [Day 012 project, connection guide and research notes](days/012-gaze-fluid/) · [Listen to the sound demo](days/012-gaze-fluid/media/day12-sound.wav)
 
 ## Day 011: Semantic Transfer
 

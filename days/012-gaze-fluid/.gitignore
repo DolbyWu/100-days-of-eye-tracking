@@ -2,4 +2,17 @@ __pycache__/
 .venv/
 recordings/
 
-/Day12-Neural-Camera.toe
+/Day12-Neural-Camera*.toe
+/Day12-Neural-Eye-Camera*.toe
+/Day12-Neural-Signals.*.toe
+/TD-Neon.app/
+/*.toe.bkp*
+/Day12-Neural-Sound.*.toe
+
+/Day12-Eye-Inset*.toe
+
+/Day12-Interactive-Neural*.toe*
+
+/Day12-Recovery-Eye-Inset.toe
+
+/CrashAutoSave*.toe

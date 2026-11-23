@@ -1,11 +1,14 @@
 """Add an optional Neon scene background to the neural-hotspot variant."""
 
 
-def add_neon_camera(comp, url):
+def add_neon_camera(comp, url, eye_inset_shader=None):
     visual = comp.op("VISUAL_RENDER")
     if visual.op("neon_scene"):
+        camera = visual.op("neon_scene")
         comp.par.Cameraurl = url
-        return visual.op("neon_scene")
+        if eye_inset_shader:
+            enable_eye_inset(visual, eye_inset_shader)
+        return camera
 
     hot = visual.op("neural_composite")
     if hot is None:
@@ -45,7 +48,17 @@ void main() {
     switch.par.index.expr = "int(parent(2).par.Cameraenabled.eval())"
     switch.nodeX, switch.nodeY = hot.nodeX + 400, hot.nodeY - 145
     visual.op("out_picture").inputConnectors[0].connect(switch)
+    if eye_inset_shader:
+        enable_eye_inset(visual, eye_inset_shader)
     return camera
 
 
-neon_scene = add_neon_camera(op("/project1/day12_gaze_fluid"), SCENE_RTSP)
+def enable_eye_inset(visual, shader):
+    parameters = visual.op("neural_parameters")
+    visual.op("camera_composite").inputConnectors[2].connect(parameters)
+    visual.op("camera_composite_source").text = shader
+    visual.parent().par.Cameraurl.label = "Eye RTSP URL"
+    visual.parent().par.Cameraenabled.label = "Eye Inset and Gaze Overlay"
+
+
+neon_scene = add_neon_camera(op("/project1/day12_gaze_fluid"), SCENE_RTSP, globals().get("EYE_INSET_SHADER"))

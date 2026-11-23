@@ -56,13 +56,18 @@ class Controls:
                              pupil_l=-1, pupil_r=-1, pupil_delta=0, worn=0, dwell=0,
                              aperture_l=-1, aperture_r=-1, blink=0,
                              fixation=0, saccade=0, fixation_onset=0,
-                             saccade_onset=0, scene_frame=-1)
+                             saccade_onset=0, scene_frame=-1,
+                             surface_visible=0, surface_on=0, marker_count=0,
+                             raw_gx=-1, raw_gy=-1)
         self.last_gaze = None
         self.last_stamp = None
         self.previous = None
         self.anchor = None
         self.baseline = None
         self.origin = None
+        self.surface_mapper = None
+        self.eye_last = None
+        self.eye_rtsp = ""
 
     def ingest(self, stamp, stream, data):
         if self.writer:
@@ -89,14 +94,29 @@ class Controls:
         ch["gaze_t"] = (stamp - self.origin) / 1e9
         x, y = number(data.get("x")), number(data.get("y"))
         ch["worn"] = int(number(data.get("worn")) == 1)
-        valid = bool(ch["worn"] and x is not None and y is not None
-                     and 0 <= x < self.args.width and 0 <= y < self.args.height)
+        ch["raw_gx"] = x / self.args.width if x is not None else -1
+        ch["raw_gy"] = y / self.args.height if y is not None else -1
+        raw_valid = bool(ch["worn"] and x is not None and y is not None
+                         and 0 <= x < self.args.width and 0 <= y < self.args.height)
+        valid = raw_valid
+        if self.surface_mapper is not None:
+            mapper = self.surface_mapper
+            ch["marker_count"] = mapper.marker_count
+            ch["surface_visible"] = int(mapper.visible)
+            mapped = mapper.map_xy(x, y) if raw_valid else None
+            valid = bool(mapped and 0 <= mapped[0] < mapper.size[0]
+                         and 0 <= mapped[1] < mapper.size[1])
+            ch["surface_on"] = int(valid)
+            if valid:
+                x = mapped[0] / mapper.size[0] * self.args.width
+                y = mapped[1] / mapper.size[1] * self.args.height
         for target, source in (("pupil_l", "pupil_diameter_left"),
                                ("pupil_r", "pupil_diameter_right"),
                                ("aperture_l", "eyelid_aperture_left"),
                                ("aperture_r", "eyelid_aperture_right")):
             value = number(data.get(source))
-            ch[target] = value if valid and value is not None and value >= 0 else -1
+            usable = ch["worn"] if target.startswith("aperture_") else valid
+            ch[target] = value if usable and value is not None and value >= 0 else -1
         ch["valid"] = int(valid)
         if not valid:
             self.previous = None
@@ -131,6 +151,12 @@ class Controls:
             ch["pupil_delta"] = min(2, max(-2, mean - self.baseline))
 
     def send(self, seconds=0, source_ns=None):
+        if self.eye_last is not None and time.monotonic()-self.eye_last > .35:
+            self.channels["eye_video_valid"] = 0
+            self.channels["eye_l_valid"] = 0
+            self.channels["eye_r_valid"] = 0
+            for i in range(3):
+                self.channels[f"eye_change{i}_valid"] = 0
         stale = (self.last_gaze is None or time.monotonic() - self.last_gaze > .3
                  if source_ns is None else
                  self.last_stamp is None or source_ns - self.last_stamp > 300_000_000)
@@ -142,8 +168,14 @@ class Controls:
         # IEEE float32 represents each unsigned 16-bit word exactly.
         epoch = self.origin or 0
         words = {f"epoch{i}": (epoch >> (16*i)) & 65535 for i in range(4)}
+        # OSC floats can carry UTF-8 bytes exactly; keep the live address local.
+        encoded_url = self.eye_rtsp.encode("utf-8")[:240]
+        endpoint = {"eye_url_n": len(encoded_url)}
+        for start in range(0,len(encoded_url),3):
+            word = encoded_url[start:start+3].ljust(3,b"\0")
+            endpoint[f"eye_url{start//3}"] = int.from_bytes(word,"big")
         self.output.sendto(osc_bundle(dict(self.channels, session=self.session,
-                                            clock=seconds, **words)),
+                                            clock=seconds, **words, **endpoint)),
                            (self.args.host, self.args.port))
 
 
@@ -234,20 +266,28 @@ def demo(args, output, writer):
     controls = Controls(args, output, writer)
     epoch, wall = time.time_ns(), time.monotonic()
     last_blink = 0
+    events = (1.8, 6.2, 6.57, 6.96) if args.neural else ()
     while not args.duration or time.monotonic() - wall < args.duration:
         t = time.monotonic() - wall
-        path_time = int(t / 8) * 8 + min(t % 8, 5.5)
+        cycle, phase = divmod(t, 13)
+        path_time = min(phase,2.8) if args.neural else int(t / 8) * 8 + min(t % 8, 5.5)
+        closed = args.neural and 7.8 <= phase < 11.15
+        event_count = int(cycle)*len(events)+bisect_right(events,phase) if args.neural else int(t/3)
         stamp = epoch + int(t * 1e9)
         controls.ingest(stamp, "gaze", {
             "x": args.width * (.5 + .30 * math.sin(path_time * 1.35)),
             "y": args.height * (.5 + .30 * math.sin(path_time * 2.1 + .5)),
-            "worn": not 7.0 <= t % 8 < 8.0,
+            "worn": args.neural or not 7.0 <= t % 8 < 8.0,
+            "eyelid_aperture_left": 0.7 if closed else 8.0,
+            "eyelid_aperture_right": 0.7 if closed else 8.2,
             "pupil_diameter_left": 3.5 + .45 * math.sin(t * 1.1),
             "pupil_diameter_right": 3.6 + .4 * math.sin(t * 1.1),
         })
-        if int(t / 3) > last_blink:
-            last_blink = int(t / 3)
+        if event_count > last_blink:
+            last_blink = event_count
             controls.ingest(stamp, "blink", {"end_time_ns": stamp})
+        if closed:
+            controls.channels.update(valid=0, pupil_l=-1, pupil_r=-1, pupil_delta=0)
         controls.send(t)
         time.sleep(1 / 60)
 
@@ -266,6 +306,10 @@ async def live_session(args, controls):
         device = Device.from_discovered_device(found)
     async with device:
         status = await device.get_status()
+        if args.surface_layout:
+            from surface_mapping import SurfaceMapper
+            controls.surface_mapper = SurfaceMapper(args.surface_layout, args.surface_min_tags)
+            print("AprilTag surface mapping enabled; waiting for scene markers.", flush=True)
         gaze = status.direct_gaze_sensor()
         if not gaze or not gaze.connected:
             raise ValueError("Neon reports its gaze sensor disconnected.")
@@ -273,6 +317,9 @@ async def live_session(args, controls):
                               ("Eye RTSP", status.direct_eyes_sensor())):
             if sensor and sensor.connected:
                 print(f"{title}: {sensor.url}", flush=True)
+        eye_sensor = status.direct_eyes_sensor()
+        if eye_sensor and eye_sensor.connected:
+            controls.eye_rtsp = str(eye_sensor.url)
 
         async def consume(sensor, receive, stream):
             async for item in receive(sensor.url, run_loop=False):
@@ -287,6 +334,48 @@ async def live_session(args, controls):
 
         gaze_task = asyncio.create_task(consume(gaze, receive_gaze_data, "gaze"))
         tasks = [gaze_task]
+        eye_task = None
+        if args.eye_features:
+            from eye_tracking import EyeTracker
+            from pupil_labs.realtime_api import receive_video_frames
+            eyes = status.direct_eyes_sensor()
+            if not eyes or not eyes.connected:
+                raise ValueError("Eye overlay needs the connected Neon eye camera")
+            eye_tracker = EyeTracker()
+
+            async def consume_eyes():
+                last_scan = 0.0
+                async for frame in receive_video_frames(eyes.url, run_loop=False):
+                    now = time.monotonic()
+                    if now-last_scan < 1/15:
+                        continue
+                    last_scan = now
+                    controls.channels.update(eye_tracker.update(frame.bgr_buffer()))
+                    controls.eye_last = now
+
+            eye_task = asyncio.create_task(consume_eyes())
+            tasks.append(eye_task)
+        scene_task = None
+        if controls.surface_mapper is not None:
+            from pupil_labs.realtime_api import receive_video_frames
+            world = status.direct_world_sensor()
+            if not world or not world.connected:
+                raise ValueError("AprilTag mapping needs the connected Neon scene camera")
+
+            async def consume_scene():
+                last_scan = 0.0
+                async for frame in receive_video_frames(world.url, run_loop=False):
+                    now = time.monotonic()
+                    if now - last_scan < 1 / 15:
+                        continue
+                    last_scan = now
+                    mapper = controls.surface_mapper
+                    mapper.update(frame.bgr_buffer(), now)
+                    controls.channels["marker_count"] = mapper.marker_count
+                    controls.channels["surface_visible"] = int(mapper.visible)
+
+            scene_task = asyncio.create_task(consume_scene())
+            tasks.append(scene_task)
         for sensor, receive, name in ((status.direct_eye_events_sensor(), receive_eye_events_data, "event"),
                                       (status.direct_imu_sensor(), receive_imu_data, "imu")):
             if sensor and sensor.connected:
@@ -295,11 +384,28 @@ async def live_session(args, controls):
                 print(f"{name} stream unavailable at connection.", flush=True)
         wall = time.monotonic()
         optional_reported = set()
+        last_surface_report = 0.0
+        last_eye_report = 0.0
+        announced = False
         try:
             while True:
                 if gaze_task.done():
                     gaze_task.result()
                     raise RuntimeError("Gaze stream ended")
+                if scene_task is not None and scene_task.done():
+                    scene_task.result()
+                    raise RuntimeError("Scene stream ended")
+                if eye_task is not None and eye_task.done():
+                    eye_task.result()
+                    raise RuntimeError("Eye stream ended")
+                if scene_task is not None and time.monotonic()-last_surface_report > 1.5:
+                    mapper = controls.surface_mapper
+                    print(f"AprilTags {mapper.marker_count}/4 | surface {'visible' if mapper.visible else 'lost'} | gaze {'on' if controls.channels['surface_on'] else 'off'}", flush=True)
+                    last_surface_report = time.monotonic()
+                if eye_task is not None and time.monotonic()-last_eye_report > 2.0:
+                    ch = controls.channels
+                    print(f"Eye candidates L/R {int(ch.get('eye_l_valid',0))}/{int(ch.get('eye_r_valid',0))} | pupil mm {ch.get('pupil_l',-1):.2f}/{ch.get('pupil_r',-1):.2f}", flush=True)
+                    last_eye_report = time.monotonic()
                 if time.monotonic() - (controls.last_gaze or wall) > 4:
                     raise TimeoutError("No gaze samples received for four seconds")
                 for task in tasks[1:]:
@@ -307,6 +413,9 @@ async def live_session(args, controls):
                         print(f"Optional stream ended: {task.exception()}", flush=True)
                         optional_reported.add(task)
                 controls.send(time.monotonic() - wall)
+                if not announced and controls.last_gaze is not None:
+                    print(f"OSC ready: {args.host}:{args.port}", flush=True)
+                    announced = True
                 await asyncio.sleep(1 / 60)
         finally:
             for task in tasks:
@@ -338,10 +447,18 @@ def main():
     parser.add_argument("--height", type=int, default=1200)
     parser.add_argument("--record", type=Path, help="Create a new telemetry CSV.")
     modes = parser.add_subparsers(dest="mode", required=True)
-    modes.add_parser("demo").add_argument("--duration", type=float, default=0)
+    demo_args = modes.add_parser("demo")
+    demo_args.add_argument("--duration", type=float, default=0)
+    demo_args.add_argument("--neural", action="store_true",
+                           help="Demonstrate the single blink, triple blink and closed-eye reset")
     live_args = modes.add_parser("live")
     live_args.add_argument("--device", help="Neon Companion IP or hostname")
     live_args.add_argument("--device-port", type=int, default=8080)
+    live_args.add_argument("--surface-layout", type=Path,
+                           help="AprilTag screen geometry JSON; invalidates gaze when tags are lost")
+    live_args.add_argument("--surface-min-tags", type=int, default=3)
+    live_args.add_argument("--eye-features", action="store_true",
+                           help="Detect pupil centers and bright changes in live eye video")
     replay_args = modes.add_parser("replay")
     replay_args.add_argument("source", type=Path, help="Bridge CSV or one Pupil Cloud export folder")
     replay_args.add_argument("--world-timestamps", type=Path)
@@ -350,6 +467,10 @@ def main():
     args = parser.parse_args()
     if min(args.width, args.height) <= 0 or not 1 <= args.port <= 65535:
         parser.error("Dimensions and UDP port must be positive and in range.")
+    if args.mode == "live" and args.surface_layout and not args.surface_layout.is_file():
+        parser.error("--surface-layout must point to an existing JSON file")
+    if args.mode == "live" and not 2 <= args.surface_min_tags <= 4:
+        parser.error("--surface-min-tags must be 2..4")
     if args.mode == "replay" and (not math.isfinite(args.rate) or args.rate <= 0):
         parser.error("Replay rate must be positive and finite.")
     if args.mode == "demo" and (not math.isfinite(args.duration) or args.duration < 0):
