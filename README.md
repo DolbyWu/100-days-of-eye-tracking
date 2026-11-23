@@ -1,10 +1,10 @@
 # 100 Days of Eye Tracking
 
-Creative coding with the eyes. Earlier entries use the **Eye5.js / Donut MIDI Workshop Editor**. Day 012 connects **Pupil Labs Neon** to **TouchDesigner** for a live audiovisual experiment.
+Creative coding with the eyes. Earlier entries use the **Eye5.js / Donut MIDI Workshop Editor**. Starting with Day 012, the project also connects **Pupil Labs Neon** to **TouchDesigner** for live audiovisual and gesture experiments.
 
 ## Daily index
 
-| Day | Work | Code and notes | Mouse playground |
+| Day | Work | Code and notes | Try it |
 | --- | --- | --- | --- |
 | 004 | Blink Bloom | [Open Day 004](days/004-blink-bloom/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/004-blink-bloom/demo/) |
 | 005 | Golden Colonies | [Open Day 005](days/005-golden-colonies/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/005-golden-colonies/demo/) |
@@ -15,10 +15,17 @@ Creative coding with the eyes. Earlier entries use the **Eye5.js / Donut MIDI Wo
 | 010 | Reading Observatory | [Open Day 010](days/010-reading-observatory/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/010-reading-observatory/demo/) |
 | 011 | Semantic Transfer | [Open Day 011](days/011-semantic-transfer/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) |
 | 012 | Neural Signals · Gaze Fluid | [Open Day 012](days/012-gaze-fluid/) | [TouchDesigner demo](days/012-gaze-fluid/#try-without-neon) |
+| 013 | Eye Bounce | [Open Day 013](days/013-eye-bounce/) | [Mac setup](days/013-eye-bounce/#run-on-a-mac) |
 
 Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready sketch and mouse demo. Day 012 includes a TouchDesigner build script and simulated gaze. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
-## Latest — Day 012: Neural Signals · Gaze Fluid
+## Latest — Day 013 · Eye Bounce
+
+Two circular crops of the Neon eye video move with your gaze over a live camera portrait. Open your hand to bounce an eye off a finger. Pinch to drag it and feel a slight elastic stretch. When you let go, the eye pauses and your gaze takes over.
+
+[Day 013 project and Mac setup](days/013-eye-bounce/)
+
+## Day 012: Neural Signals · Gaze Fluid
 
 [![Day 012 preview showing the live eye inset and cyan gaze traces over a neural image](days/012-gaze-fluid/media/day12-preview.png)](https://youtu.be/H5AxhrK5gwA)
 
