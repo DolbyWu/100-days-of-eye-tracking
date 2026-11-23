@@ -1,6 +1,10 @@
 # Day 013 · Eye Bounce
 
+[![Two floating eye circles in front of the performer, with mint outlines tracking both pinching hands](media/day13-eye-bounce.jpg)](https://youtu.be/CoOWgR-9OOE)
+
 Two live images of the wearer's eyes float over a mirror view from the Mac camera. Gaze steers both circles. Stretch out a finger and an eye can bounce off it. Bring your thumb and index finger to the edge of one eye, pinch and drag. The eye stretches gently along the movement. Open your fingers and it settles for 0.2 seconds before gaze takes over again. Each hand can hold a different eye.
+
+[Watch the Day 013 video on YouTube](https://youtu.be/CoOWgR-9OOE)
 
 ## Run on a Mac
 

@@ -21,9 +21,11 @@ Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready
 
 ## Latest — Day 013 · Eye Bounce
 
+[![Two floating eye circles in front of the performer, with mint outlines tracking both pinching hands](days/013-eye-bounce/media/day13-eye-bounce.jpg)](https://youtu.be/CoOWgR-9OOE)
+
 Two circular crops of the Neon eye video move with your gaze over a live camera portrait. Open your hand to bounce an eye off a finger. Pinch to drag it and feel a slight elastic stretch. When you let go, the eye pauses and your gaze takes over.
 
-[Day 013 project and Mac setup](days/013-eye-bounce/)
+[Watch the Day 013 video on YouTube](https://youtu.be/CoOWgR-9OOE) · [Day 013 project and Mac setup](days/013-eye-bounce/)
 
 ## Day 012: Neural Signals · Gaze Fluid
 
