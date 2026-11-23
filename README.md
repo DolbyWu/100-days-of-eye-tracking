@@ -20,6 +20,8 @@ Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready
 
 ## Latest — Day 012: Neural Signals · Gaze Fluid
 
+[![Day 012 preview showing the live eye inset and cyan gaze traces over a neural image](days/012-gaze-fluid/media/day12-preview.png)](https://youtu.be/H5AxhrK5gwA)
+
 Look to light up a neural image in cyan. Blink to send a white pulse. Blink three times to scatter it into a textured point cloud, then close both eyes for three seconds to bring it back. Each gesture has its own synthesized sound. The work takes inspiration from sensory transduction and research on neural signalling in autism.
 
 [Watch the Day 012 video on YouTube](https://youtu.be/H5AxhrK5gwA) · [Day 012 project, connection guide and research notes](days/012-gaze-fluid/) · [Listen to the sound demo](days/012-gaze-fluid/media/day12-sound.wav)

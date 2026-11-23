@@ -1,5 +1,7 @@
 # Day 012 — Neural Signals · Gaze Fluid
 
+[![TouchDesigner screenshot showing the live eye inset and cyan gaze traces over a neural image](media/day12-preview.png)](https://youtu.be/H5AxhrK5gwA)
+
 My first audiovisual study with **Pupil Labs Neon** and **TouchDesigner**. Looking at the neural image makes its fibres glow cyan. Pupil changes give the relief a breathing motion, and short sounds accompany each transformation.
 
 [Watch the Day 012 video on YouTube](https://youtu.be/H5AxhrK5gwA) · [Download the TouchDesigner project](Day12-Neural-Sound.toe) · [Listen to the sound demo](media/day12-sound.wav) · [Read the research and design notes](REFLECTION.md)
