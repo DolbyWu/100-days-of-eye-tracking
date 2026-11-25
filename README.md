@@ -16,10 +16,15 @@ Creative coding with the eyes. Earlier entries use the **Eye5.js / Donut MIDI Wo
 | 011 | Semantic Transfer | [Open Day 011](days/011-semantic-transfer/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) |
 | 012 | Neural Signals · Gaze Fluid | [Open Day 012](days/012-gaze-fluid/) | [TouchDesigner demo](days/012-gaze-fluid/#try-without-neon) |
 | 013 | Eye Bounce | [Open Day 013](days/013-eye-bounce/) | [Mac setup](days/013-eye-bounce/#run-on-a-mac) |
+| 015 | Eye in Eye | [Open Day 015](days/015-eye-flow/) | [Fire preview](days/015-eye-flow/media/fire-ring.mp4) |
 
 Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready sketch and mouse demo. Day 012 includes a TouchDesigner build script and simulated gaze. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
-## Latest — Day 013 · Eye Bounce
+## Latest — Day 015 · Eye in Eye
+
+Optical flow tracks the eyes in real time. Three quick blinks ignite a pair of rolling fire rings with stereo crackle. [Open Day 015](days/015-eye-flow/)
+
+## Day 013 · Eye Bounce
 
 [![Two floating eye circles in front of the performer, with mint outlines tracking both pinching hands](days/013-eye-bounce/media/day13-eye-bounce.jpg)](https://youtu.be/CoOWgR-9OOE)
 
