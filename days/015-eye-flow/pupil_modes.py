@@ -5,12 +5,14 @@ blink_sample = None
 blink_times = []
 pupil_fire = False
 fire_started = 0.0
+pupil_mode = 0
+closed_since = None
 palette_index = 0
 palette = [(201,226,52),(255,107,160),(59,225,255),(255,164,60),
            (179,135,255),(90,246,157),(255,100,84)]
 
 def blink_colors(root):
-    global blink_sample, palette_index, pupil_fire, fire_started
+    global blink_sample, palette_index, pupil_fire, fire_started, pupil_mode, closed_since
     osc = root.op('gaze_in')
     global heartbeat,last_clock
     clock=osc['clock'] if osc is not None else None
@@ -32,7 +34,8 @@ def blink_colors(root):
                     blink_times.clear()
                 blink_times.append(now)
                 if len(blink_times)==3:
-                    pupil_fire=not pupil_fire
+                    pupil_mode=pupil_mode%3+1
+                    pupil_fire=pupil_mode==1
                     fire_started=now
                     blink_times.clear()
             else:
@@ -40,6 +43,19 @@ def blink_colors(root):
         blink_sample = sample
     else:
         blink_sample = None
+    now=monotonic()
+    apertures=[osc[name] for name in ('aperture_l','aperture_r')] if osc is not None else []
+    fresh=now-heartbeat<.45
+    closed=fresh and len(apertures)==2 and all(c is not None and 0<=c.eval()<1.5 for c in apertures)
+    if closed:
+        if closed_since is None:
+            closed_since=now
+        if now-closed_since>=1.0:
+            pupil_mode=0
+            pupil_fire=False
+            blink_times.clear()
+    else:
+        closed_since=None
     rgb = palette[palette_index]
     return rgb, tuple(round(c*.80) for c in rgb), tuple(min(255,c+18) for c in rgb)
 
@@ -220,8 +236,11 @@ def draw_fire_ring(canvas,left,top,right,bottom,now):
 def pupil_detail(canvas,box,scale,root,now):
     x,y,a,b=box
     left,top,right,bottom=[round(v*scale) for v in (x,y,x+a,y+b)]
-    if pupil_fire and right > left and bottom > top:
-        draw_fire_ring(canvas,left,top,right,bottom,now)
+    if pupil_mode and right > left and bottom > top:
+        if pupil_mode==1:
+            draw_fire_ring(canvas,left,top,right,bottom,now)
+        else:
+            draw_pupil_mode(canvas,left,top,right,bottom,now-fire_started,pupil_mode-1)
     osc=root.op('gaze_in')
     side='l' if left<canvas.shape[1]/2 else 'r'
     ch=osc['pupil_'+side]
@@ -231,3 +250,121 @@ def pupil_detail(canvas,box,scale,root,now):
     at=(max(0,min(canvas.shape[1]-65,left)),max(15,top-6))
     cv2.putText(canvas,label,at,cv2.FONT_HERSHEY_SIMPLEX,.44,(25,25,25),2,cv2.LINE_AA)
     cv2.putText(canvas,label,at,cv2.FONT_HERSHEY_SIMPLEX,.44,(245,245,245),1,cv2.LINE_AA)
+
+
+mode_rng=np.random.default_rng(2515)
+star_angle=mode_rng.uniform(-np.pi,np.pi,900)
+star_phase=mode_rng.uniform(0,1,900)
+star_speed=mode_rng.uniform(.25,.9,900)
+star_light=mode_rng.uniform(.3,1,900)
+
+# Stable samples on folded translucent sheets. Projected density lights the creases.
+water_rng=np.random.default_rng(4915)
+water_theta=water_rng.uniform(-np.pi,np.pi,68000).astype(np.float32)
+water_depth=water_rng.random(68000).astype(np.float32)
+water_sheet=water_rng.integers(0,5,68000).astype(np.float32)
+
+def water_ripples(t,n):
+    a=water_theta
+    d=water_depth
+    band=water_sheet
+    flow=t*2.8
+    # A travelling surge reaches each folded sheet at a different moment.
+    crest=(.5+.5*np.cos(5.6*t-5*d-.62*band+1.2*np.sin(2*a)))**4
+    fold=np.sin(3*a+.48*flow+2.4*d+.27*band)+.42*np.sin(7*a-.37*flow+4*d)
+    radius=.29+.085*band+.20*d+.082*fold+.048*np.sin(6*d+2*a+.54*flow)+.105*crest
+    theta=a+.19*np.sin(4*d+2*a-.65*flow)+.12*d+.21*crest*np.sin(3*a+flow)
+    x=radius*np.cos(theta)+.05*np.sin(8*d+2*a+flow*.55)
+    y=radius*np.sin(theta)+.076*np.sin(6*d+3*a+flow*.58)
+    ix=np.clip(((.5+.46*x)*n).astype(int),0,n-1)
+    iy=np.clip(((.5+.46*y)*n).astype(int),0,n-1)
+    rim=np.exp(-((d-.08)/.055)**2)+.5*np.exp(-((d-.94)/.04)**2)
+    light=.18+.58*(.5+.5*np.cos(theta+2.7))**2+1.9*rim+.55*crest
+    density=np.bincount(iy*n+ix,weights=light,minlength=n*n).reshape(n,n).astype(np.float32)
+    mist=cv2.GaussianBlur(density,(0,0),1.3)
+    value=1-np.exp(-(.24*density+.52*mist))
+    return np.stack((205*value**2.9,235*value**1.65,255*value**1.12),axis=-1),value
+
+from pathlib import Path as _ClockPath
+_clock_dir = _ClockPath(project.folder) if 'project' in globals() else _ClockPath.cwd()
+clock_ink = cv2.imread(str(_clock_dir/'clock-stems.png'), cv2.IMREAD_GRAYSCALE)
+
+def radar_iris(t,r,angle):
+    image=np.zeros((*r.shape,3),np.float32)
+    if clock_ink is not None:
+        image[:,:,0]=clock_ink
+    sweep_progress=(t % .8)/.8
+    sweep=-np.pi/2+2*np.pi*sweep_progress
+    delta=np.arctan2(np.sin(angle-sweep),np.cos(angle-sweep))
+    # Wrap the distance behind the clockwise hand to avoid a seam at pi.
+    behind=np.mod(sweep-angle,2*np.pi)
+    age=behind/(2*np.pi/.8)
+    elapsed=np.minimum(age,t)
+    fan=np.exp(-elapsed/.105)*np.clip((.25-age)*32,0,1)*(age<=t)
+    teeth=np.exp(-(np.sin(110*angle)/.36)**2)
+    inner=.43
+    outer_fan=.87
+    span=np.clip((r-inner)*100,0,1)*np.clip((outer_fan-r)*100,0,1)
+    white=teeth*span*fan
+    # Jia is at noon, Yi and Bing are the next two clockwise positions.
+    distance=abs((sweep_progress-.10+.5)%1-.5)
+    blue=np.clip((.22-distance)/.12,0,1)
+    blue*=blue*(3-2*blue)
+    trail_color=np.array([235-218*blue,245-109*blue,255])
+    image+=white[:,:,None]*trail_color
+    # A small bundle of parallel rays forms the red hand.
+    beam=np.zeros_like(r)
+    for shift in (-.021,-.0105,0,.0105,.021):
+        beam+=np.exp(-((delta-shift)/.0038)**2)
+    beam*=np.clip((r-.06)*80,0,1)*np.clip((.98-r)*100,0,1)
+    image+=beam[:,:,None]*np.array([255,48,19])
+    return image
+
+def draw_pupil_mode(canvas,left,top,right,bottom,t,mode):
+    diameter=np.sqrt((right-left)*(bottom-top))
+    radius=max(6,round(diameter*.83))
+    cx,cy=round((left+right)/2),round((top+bottom)/2)
+    n=768 if mode==2 else (384 if mode==1 else 192)
+    yy,xx=np.indices((n,n),dtype=np.float32)
+    u,v=(xx-(n-1)/2)/(n*.46875),(yy-(n-1)/2)/(n*.46875)
+    r=np.hypot(u,v)
+    angle=np.arctan2(v,u)
+    layer=np.zeros((n,n,3),np.float32)
+    if mode==1:
+        layer,water_alpha=water_ripples(t,n)
+    elif mode==2:
+        layer=radar_iris(t,r,angle)
+    else:
+        phase=(star_phase+t*star_speed)%1
+        distance=.20+.80*phase**1.4
+        theta=star_angle+.23*t+.13*np.sin(star_angle*3+t)*(1-phase)
+        sx=95.5+90*distance*np.cos(theta)
+        sy=95.5+90*distance*np.sin(theta)
+        for i in range(len(theta)):
+            length=(.012+.11*phase[i]**3)*(1 if mode==2 else .6)
+            ex=sx[i]-90*length*np.cos(theta[i])
+            ey=sy[i]-90*length*np.sin(theta[i])
+            strength=star_light[i]*np.sin(np.pi*phase[i])**.5
+            color=np.array(([255,28,65] if i%5 else [180,222,255]) if mode==2 else [255,135+100*star_light[i],27])
+            cv2.line(layer,(round(sx[i]),round(sy[i])),(round(ex),round(ey)),tuple(color*strength),1,cv2.LINE_AA)
+        if mode==3:
+            corona=np.exp(-((r-.83-.025*np.sin(9*angle+2*t))/.025)**2)
+            layer+=corona[:,:,None]*np.array([130,63,9])
+    halo=cv2.GaussianBlur(layer,(0,0),2.2)
+    layer=np.minimum(255,layer+halo*(.25 if mode==2 else .8))
+    mask=np.clip((1.07-r)*15,0,1)*np.clip((r-.14)*16,0,1)
+    if mode==1:
+        mask*=water_alpha*.85
+    if mode==2:
+        mask=layer.max(axis=2)/215
+    mask*=min(1,t*5)
+    rgba=np.dstack((layer*min(1,t*5),mask*215)).astype(np.uint8)
+    image=cv2.resize(rgba,(radius*2,radius*2),interpolation=cv2.INTER_AREA if mode==2 else cv2.INTER_LINEAR)
+    x,y=cx-radius,cy-radius
+    x0,y0=max(0,x),max(0,y)
+    x1,y1=min(canvas.shape[1],cx+radius),min(canvas.shape[0],cy+radius)
+    if x1<=x0 or y1<=y0:
+        return
+    image=image[y0-y:y1-y,x0-x:x1-x]
+    patch=canvas[y0:y1,x0:x1]
+    patch[:]=np.minimum(255,patch*(1-image[:,:,3:4]/255.)+image[:,:,:3])
