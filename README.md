@@ -16,6 +16,7 @@ Creative coding with the eyes. Earlier entries use the **Eye5.js / Donut MIDI Wo
 | 011 | Semantic Transfer | [Open Day 011](days/011-semantic-transfer/) | [Play](https://dolbywu.github.io/100-days-of-eye-tracking/days/011-semantic-transfer/demo/) |
 | 012 | Neural Signals · Gaze Fluid | [Open Day 012](days/012-gaze-fluid/) | [TouchDesigner demo](days/012-gaze-fluid/#try-without-neon) |
 | 013 | Eye Bounce | [Open Day 013](days/013-eye-bounce/) | [Mac setup](days/013-eye-bounce/#run-on-a-mac) |
+| 014 | Reading Orbits | [Open Day 014](days/014-reading-orbits/) | [TouchDesigner project](days/014-reading-orbits/Day14-Reading-Orbits-Dashboard.toe) |
 | 015 | Eye in Eye | [Open Day 015](days/015-eye-flow/) | [Fire preview](days/015-eye-flow/media/fire-ring.mp4) |
 
 Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready sketch and mouse demo. Day 012 includes a TouchDesigner build script and simulated gaze. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.

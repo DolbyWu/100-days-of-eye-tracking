@@ -1,0 +1,6 @@
+readings/
+__pycache__/
+*.bkp*
+*.toe.dir/
+*.toe.toc
+*.1.toe
