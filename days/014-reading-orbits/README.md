@@ -1,5 +1,7 @@
 # Day 014 · Reading Orbits
 
+![Day 014 video still with floating eyes, reading words and the book page](cover.jpg)
+
 Mac 摄像头拍摄读者。Neon 眼部视频变成两个始终朝向观众的圆形窗口，你把它们放在哪里，它们就停在哪里。Neon 第一视角拍下书页。视线短暂停在一个词上，词就从一只眼睛的正面喷出，沿弧线落下，再浮回它在原页上的相对位置。文字统一使用 31 点字号，从出现到归位保持原大。两只眼睛轮流出词，拖动圆形眼睛会把已经出现的词推开。
 
 ## 打开作品

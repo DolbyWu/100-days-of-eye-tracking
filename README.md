@@ -25,6 +25,14 @@ Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready
 
 Optical flow tracks the eyes in real time. Three quick blinks ignite a pair of rolling fire rings with stereo crackle. [Open Day 015](days/015-eye-flow/)
 
+## Day 014 · Reading Orbits
+
+[![Day 014 shows two floating live eyes above the reader while words emerge from the book](days/014-reading-orbits/cover.jpg)](days/014-reading-orbits/)
+
+A live Mac camera portrait becomes a reading stage. Neon eye video floats above the reader, and recognized words emerge from the eyes as the page is read. The dashboard shows the incoming eye data.
+
+[Day 014 project and setup](days/014-reading-orbits/)
+
 ## Day 013 · Eye Bounce
 
 [![Two floating eye circles in front of the performer, with mint outlines tracking both pinching hands](days/013-eye-bounce/media/day13-eye-bounce.jpg)](https://youtu.be/CoOWgR-9OOE)
