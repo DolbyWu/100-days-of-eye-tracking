@@ -1,5 +1,7 @@
 # Day 017 · The Seeing Brain
 
+![The Seeing Brain with live eyes, hand controls and Neon dashboard](media/cover.png)
+
 Open **[The-Seeing-Brain.toe](The-Seeing-Brain.toe)** in TouchDesigner and view `/project1/seeing_brain/out_scan`. The saved project starts with a synthetic demonstration. If you obtained only the source files, prepare the meshes first. Keep the project beside its assets folder.
 
 [Demo preview](media/demo.mp4) · [Oblique](media/oblique.png) · [Front](media/front.png) · [Lateral](media/lateral.png) · [Superior](media/superior.png)
