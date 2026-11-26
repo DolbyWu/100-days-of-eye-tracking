@@ -1,6 +1,8 @@
 # Day 017 · The Seeing Brain
 
-![The Seeing Brain with live eyes, hand controls and Neon dashboard](media/cover.png)
+[![The Seeing Brain with live eyes, hand controls and Neon dashboard](media/cover.png)](https://youtu.be/_Fubeu3Un7g)
+
+[Watch the Day 016 video on YouTube](https://youtu.be/_Fubeu3Un7g)
 
 Open **[The-Seeing-Brain.toe](The-Seeing-Brain.toe)** in TouchDesigner and view `/project1/seeing_brain/out_scan`. The saved project starts with a synthetic demonstration. If you obtained only the source files, prepare the meshes first. Keep the project beside its assets folder.
 
@@ -59,3 +61,9 @@ The rendered disclosure reads **Neuroscience-informed simulation · Not measured
 ### Hand controls on macOS
 
 The mirrored live Mac camera fills the background behind the scan and fingertip labels. The unmirrored camera input also supplies frames to Apple Vision. Movie export includes the camera portrait. Hold the left thumb and index finger in view and spread them to enlarge the entire anatomy. Closing the span reduces it. The right thumb–index span controls rotation about the anatomical scene's vertical Y axis (−115° to +115°). Two fingertip segments labeled **scale** and **rotate** appear on the scan while tracked. Distances are relative to the visible palm. Losing a hand hides its segment and holds the current transform. During rotation, screen-space particles inherit color from the rendered anatomy and fade over roughly 0.3–0.75 seconds. Allow camera access for TouchDesigner. The helper uses Vision handedness on the unmirrored capture. To rebuild it with Apple's command-line developer tools, run `swiftc -O scripts/hand_pose.swift -o scripts/hand-pose` from this directory. The camera stays independent of the Neon OSC connection.
+
+### Research reference
+
+The visual mapping was informed by *Brain-wide activation and deactivation maps during smooth and saccadic tracking in humans*, Cerebral Cortex, volume 35, issue 8 (2025), bhaf242. The project uses a qualitative artistic mapping from eye events to regional light.
+
+[Read the paper](https://academic.oup.com/cercor/article/35/8/bhaf242/8250586)
