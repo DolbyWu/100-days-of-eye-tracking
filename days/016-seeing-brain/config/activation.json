@@ -1,0 +1,7 @@
+{
+  "fixation": {"V1":0.72,"SC":0.34,"LGN":0.24},
+  "saccade": {"FEF":1,"IPS":0.83,"SC":0.8,"cerebellum":0.40},
+  "smooth_motion": {"MT_MST":0.86,"FEF":0.44,"cerebellum":0.20},
+  "blink": {"brainstem":0.78},
+  "thresholds": {"saccade_on_uv_s":1.7,"saccade_off_uv_s":0.85,"still_uv_s":0.18,"fixation_s":0.13,"stale_s":0.40}
+}

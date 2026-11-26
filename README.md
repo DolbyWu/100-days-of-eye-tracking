@@ -18,10 +18,15 @@ Creative coding with the eyes. Earlier entries use the **Eye5.js / Donut MIDI Wo
 | 013 | Eye Bounce | [Open Day 013](days/013-eye-bounce/) | [Mac setup](days/013-eye-bounce/#run-on-a-mac) |
 | 014 | Reading Orbits | [Open Day 014](days/014-reading-orbits/) | [TouchDesigner project](days/014-reading-orbits/Day14-Reading-Orbits-Dashboard.toe) |
 | 015 | Interactive Eye Circles | [Open Day 015](days/015-eye-flow/) | [Fire preview](days/015-eye-flow/media/fire-ring.mp4) |
+| 016 | The Seeing Brain | [Open Day 016](days/016-seeing-brain/) | [Anatomy preview](days/016-seeing-brain/media/oblique.png) |
 
 Each entry is stored in `days/NNN-title/`. Eye5.js entries include a paste-ready sketch and mouse demo. Day 012 includes a TouchDesigner build script and simulated gaze. Entries retain their project day numbers; days not yet documented here are omitted rather than renumbered.
 
-## Latest — Day 015 · Interactive Eye Circles
+## Latest — Day 016 · The Seeing Brain
+
+A live Neon gaze stream drives illustrative activity across a rotatable 3D anatomical head. A Mac camera portrait fills the background, with hand gestures controlling scale and vertical-axis rotation. [Open Day 016](days/016-seeing-brain/) · [View the demo](days/016-seeing-brain/media/demo.mp4)
+
+## Day 015 · Interactive Eye Circles
 
 Pinch to move and resize two live Neon eyes over the Mac camera. Triple blinks cycle fire, blue water ripples and a calligraphic clock, while a dashboard displays live eye and head-motion data. [Open Day 015](days/015-eye-flow/)
 

@@ -1,0 +1,545 @@
+{
+  "source": "https://raw.githubusercontent.com/Z-Anatomy/Models-of-human-anatomy/7be0bfc49409b45fda74bf86fc13086fad0f4df2/Z-Anatomy.zip",
+  "revision": "7be0bfc49409b45fda74bf86fc13086fad0f4df2",
+  "sha256": "e029688545627bd0214b269e1063143abb580aad72b2c2445d6d8a9a0d9da736",
+  "original_blend_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+  "license": "CC BY-SA 4.0; upstream credits and exceptions in License.txt",
+  "transform": {
+    "origin": [
+      -5.2288174629211426e-05,
+      0.001551758497953415,
+      1.6008753776550293
+    ],
+    "scale": 9.56217356116133,
+    "axes": "(x,z,-y) after centering, right-handed; common skull height ~2"
+  },
+  "objects": {
+    "skull": {
+      "objects": [
+        "Ethmoid bone",
+        "Frontal bone",
+        "Lacrimal bone.l",
+        "Lacrimal bone.r",
+        "Lower canine.l",
+        "Lower canine.r",
+        "Lower first molar tooth.l",
+        "Lower first molar tooth.r",
+        "Lower first premolar.l",
+        "Lower first premolar.r",
+        "Lower lateral incisor.l",
+        "Lower lateral incisor.r",
+        "Lower medial incisor.l",
+        "Lower medial incisor.r",
+        "Lower second molar tooth.l",
+        "Lower second molar tooth.r",
+        "Lower second premolar.l",
+        "Lower second premolar.r",
+        "Mandible",
+        "Maxilla.l",
+        "Maxilla.r",
+        "Nasal bone.l",
+        "Nasal bone.r",
+        "Occipital bone",
+        "Palatine bone.l",
+        "Palatine bone.r",
+        "Parietal bone.l",
+        "Parietal bone.r",
+        "Sphenoid bone",
+        "Temporal bone.l",
+        "Temporal bone.r",
+        "Upper canine.l",
+        "Upper canine.r",
+        "Upper first molar tooth.l",
+        "Upper first molar tooth.r",
+        "Upper first premolar.l",
+        "Upper first premolar.r",
+        "Upper lateral incisor.l",
+        "Upper lateral incisor.r",
+        "Upper medial incisor.l",
+        "Upper medial incisor.r",
+        "Upper second molar tooth.l",
+        "Upper second molar tooth.r",
+        "Upper second premolar.l",
+        "Upper second premolar.r",
+        "Vomer",
+        "Zygomatic bone.l",
+        "Zygomatic bone.r"
+      ],
+      "triangles": 152348,
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sha256": "4d151c23815b70ed93f8de9218cf46bf1aa19b52270f9b31a5d4779f1998d01b",
+      "status": "named source anatomy"
+    },
+    "brain_L": {
+      "objects": [
+        " Posterior transverse collateral sulcus.l",
+        "Angular gyrus.l",
+        "Anterior occipital sulcus*.l",
+        "Calcarine sulcus.l",
+        "Central sulcus.l",
+        "Cingulate gyrus (Posteroventral part*).l",
+        "Cingulate gyrus and sulcus (Middle anterior part).l",
+        "Cingulate gyrus and sulcus (Middle posterior part).l",
+        "Cingulate gyrus and sulcus (Posterior dorsal part).l",
+        "Cingulate sulcus (Marginal part*).l",
+        "Circular sulcus of insula.l",
+        "Collateral sulcus.l",
+        "Cuneus.l",
+        "Inferior frontal sulcus.l",
+        "Inferior occipital gyrus and sulcus*.l",
+        "Inferior temporal gyrus.l",
+        "Inferior temporal sulcus.l",
+        "Insula (Subcentral gyrus and ant. and post. sulci*).l",
+        "Intraparietal sulcus.l",
+        "Lat_Fis-ant-Horizont.l",
+        "Lat_Fis-ant-Vertical.l",
+        "Lat_Fis-post.l",
+        "Lateral occipital gyrus (Middle occipital gyrus*).l",
+        "Lateral occipitotemporal gyrus.l",
+        "Lingual gyrus.l",
+        "Lunate sulcus.l",
+        "Medial occipitotemporal gyrus (Parahippocampal*).l",
+        "Middle frontal gyrus.l",
+        "Middle temporal gyrus.l",
+        "Occipital pole.l",
+        "Occipitotemporal sulcus (Lateral part*).l",
+        "Olfactory sulcus.l",
+        "Opercular part of inferior frontal gyrus.l",
+        "Orbital gyri (Frontomarginal gyrus and sulcus*).l",
+        "Orbital gyri.l",
+        "Orbital part of  inferior frontal gyrus.l",
+        "Orbital sulci (H-shaped orbital sulci*).l",
+        "Orbital sulci (Lateral Orbital sulcus*).l",
+        "Paracentral gyrus and sulcus*.l",
+        "Paracentral sulcus.l",
+        "Parieto-occipital sulcus.l",
+        "Postcentral gyrus.l",
+        "Postcentral sulcus.l",
+        "Precentral gyrus.l",
+        "Precentral sulcus (Superior part)*.l",
+        "Precentral sulcus (inferior part)*.l",
+        "Precuneus.l",
+        "Straight gyrus (Gyrus rectus).l",
+        "Subparietal sulcus.l",
+        "Sulcus interm_prim-Jensen.l",
+        "Superior frontal gyrus.l",
+        "Superior frontal sulcus.l",
+        "Superior occipital gyri.l",
+        "Superior parietal lobule.l",
+        "Superior temporal gyrus (Lateral part).l",
+        "Superior temporal sulcus.l",
+        "Supramarginal gyrus.l",
+        "Temporal plane.l",
+        "Temporal pole.l",
+        "Transverse frontopolar gyrus and sulcus*.l",
+        "Transverse occipital sulcus.l",
+        "Transverse temporal gyri.l",
+        "Triangular part of inferior frontal gyrus.l"
+      ],
+      "triangles": 55513,
+      "center": [
+        0.32988035678863525,
+        0.3809220790863037,
+        -0.06914004683494568
+      ],
+      "sha256": "cbd2a2c622a3f39f75a67526d559ed7f32111740cfb95dbe6eddcf4422467a20",
+      "status": "named source anatomy"
+    },
+    "eye_L": {
+      "objects": [
+        "Sclera.l"
+      ],
+      "triangles": 1120,
+      "center": [
+        0.29260700941085815,
+        -0.09726253151893616,
+        0.6203570365905762
+      ],
+      "sha256": "c03feb0b3e8aab35d3d7ce1d2720679fcdabfd901422450f0bfff122c6c91290",
+      "status": "named source anatomy"
+    },
+    "iris_L": {
+      "objects": [
+        "Iris.l"
+      ],
+      "triangles": 3248,
+      "center": [
+        0.29848480224609375,
+        -0.09271832555532455,
+        0.7156382203102112
+      ],
+      "sha256": "abae6b92b380a5feb42729b38100535ed08cc19540f3fd4f28c8077466b3e08e",
+      "status": "named source anatomy"
+    },
+    "LGN_L": {
+      "objects": [
+        "Lateral geniculate body.l"
+      ],
+      "triangles": 604,
+      "center": [
+        0.18310445547103882,
+        0.10874702036380768,
+        -0.11093561351299286
+      ],
+      "sha256": "d709d7d2394c19cdf6c158e55f4808757b0221213fe5e3aeb2adb23da5902861",
+      "status": "named source anatomy"
+    },
+    "SC_L": {
+      "objects": [
+        "Superior colliculus.l"
+      ],
+      "triangles": 458,
+      "center": [
+        0.08368373662233353,
+        0.1113995760679245,
+        -0.14412929117679596
+      ],
+      "sha256": "2228a0679f628abf1d336cc1da5eb573dc773b99759200ad5dfcbcd49c52f569",
+      "status": "named source anatomy"
+    },
+    "tract_L": {
+      "objects": [
+        "Optic tract.l"
+      ],
+      "triangles": 2332,
+      "center": [
+        0.12166853249073029,
+        0.1071619987487793,
+        0.015596091747283936
+      ],
+      "sha256": "a2fe1fb8dcc6711afd6fae08fb6c5cc397af2b8b4e2ab3881f6fabeec3f90262",
+      "status": "named source anatomy"
+    },
+    "V1_L": {
+      "objects": [
+        "Calcarine sulcus.l"
+      ],
+      "triangles": 872,
+      "center": [
+        0.12232046574354172,
+        0.16541658341884613,
+        -0.6101192235946655
+      ],
+      "sha256": "f929122e79bdbb7cb7e40be4206fdfaf8eff7669f72a6e8f647583ced51baf1c",
+      "status": "approximate anatomical proxy"
+    },
+    "FEF_L": {
+      "objects": [
+        "Middle frontal gyrus.l"
+      ],
+      "triangles": 2277,
+      "center": [
+        0.304776668548584,
+        0.5621029138565063,
+        0.3350294530391693
+      ],
+      "sha256": "e568292036d902b5c92639c1aa63301785568e0448b1efed2ec038a07de911f5",
+      "status": "approximate anatomical proxy"
+    },
+    "IPS_L": {
+      "objects": [
+        "Intraparietal sulcus.l"
+      ],
+      "triangles": 852,
+      "center": [
+        0.27133968472480774,
+        0.5734454393386841,
+        -0.5354211926460266
+      ],
+      "sha256": "1b7ea46088c03bd577f1b6bc3e59195f66f4499c9832d783a76f94bafe386169",
+      "status": "named source anatomy"
+    },
+    "MT_MST_L": {
+      "objects": [
+        "Middle temporal gyrus.l"
+      ],
+      "triangles": 1312,
+      "center": [
+        0.5084572434425354,
+        0.1325504183769226,
+        -0.2054480016231537
+      ],
+      "sha256": "2187616f0bad12d0008f4bd179f759a32f08ae90bd5376ee771cb6d9dd9f1f8a",
+      "status": "approximate anatomical proxy"
+    },
+    "brain_R": {
+      "objects": [
+        " Posterior transverse collateral sulcus.r",
+        "Angular gyrus.r",
+        "Anterior occipital sulcus*.r",
+        "Calcarine sulcus.r",
+        "Central sulcus.r",
+        "Cingulate gyrus (Posteroventral part*).r",
+        "Cingulate gyrus and sulcus (Middle anterior part).r",
+        "Cingulate gyrus and sulcus (Middle posterior part).r",
+        "Cingulate gyrus and sulcus (Posterior dorsal part).r",
+        "Cingulate sulcus (Marginal part*).r",
+        "Circular sulcus of insula.r",
+        "Collateral sulcus.r",
+        "Cuneus.r",
+        "Inferior frontal sulcus.r",
+        "Inferior occipital gyrus and sulcus*.r",
+        "Inferior temporal gyrus.r",
+        "Inferior temporal sulcus.r",
+        "Insula (Subcentral gyrus and ant. and post. sulci*).r",
+        "Intraparietal sulcus.r",
+        "Lat_Fis-ant-Horizont.r",
+        "Lat_Fis-ant-Vertical.r",
+        "Lat_Fis-post.r",
+        "Lateral occipital gyrus (Middle occipital gyrus*).r",
+        "Lateral occipitotemporal gyrus.r",
+        "Lingual gyrus.r",
+        "Lunate sulcus.r",
+        "Medial occipitotemporal gyrus (Parahippocampal*).r",
+        "Middle frontal gyrus.r",
+        "Middle temporal gyrus.r",
+        "Occipital pole.r",
+        "Occipitotemporal sulcus (Lateral part*).r",
+        "Olfactory sulcus.r",
+        "Opercular part of inferior frontal gyrus.r",
+        "Orbital gyri (Frontomarginal gyrus and sulcus*).r",
+        "Orbital gyri.r",
+        "Orbital part of  inferior frontal gyrus.r",
+        "Orbital sulci (H-shaped orbital sulci*).r",
+        "Orbital sulci (Lateral Orbital sulcus*).r",
+        "Paracentral gyrus and sulcus*.r",
+        "Paracentral sulcus.r",
+        "Parieto-occipital sulcus.r",
+        "Postcentral gyrus.r",
+        "Postcentral sulcus.r",
+        "Precentral gyrus.r",
+        "Precentral sulcus (Superior part)*.r",
+        "Precentral sulcus (inferior part)*.r",
+        "Precuneus.r",
+        "Straight gyrus (Gyrus rectus).r",
+        "Subparietal sulcus.r",
+        "Sulcus interm_prim-Jensen.r",
+        "Superior frontal gyrus.r",
+        "Superior frontal sulcus.r",
+        "Superior occipital gyri.r",
+        "Superior parietal lobule.r",
+        "Superior temporal gyrus (Lateral part).r",
+        "Superior temporal sulcus.r",
+        "Supramarginal gyrus.r",
+        "Temporal plane.r",
+        "Temporal pole.r",
+        "Transverse frontopolar gyrus and sulcus*.r",
+        "Transverse occipital sulcus.r",
+        "Transverse temporal gyri.r",
+        "Triangular part of inferior frontal gyrus.r"
+      ],
+      "triangles": 55513,
+      "center": [
+        -0.32888028025627136,
+        0.3809220790863037,
+        -0.06914004683494568
+      ],
+      "sha256": "345c3ef6122197f71e1fdd4a93d77e02c1b1b23c40e838513fd510a56d97de55",
+      "status": "named source anatomy"
+    },
+    "eye_R": {
+      "objects": [
+        "Sclera.r"
+      ],
+      "triangles": 1120,
+      "center": [
+        -0.2916070818901062,
+        -0.09726253151893616,
+        0.6203570365905762
+      ],
+      "sha256": "0f5500762003ba57a9aae9bb33804b49e2256039ca15a5a37090aec0a46451b3",
+      "status": "named source anatomy"
+    },
+    "iris_R": {
+      "objects": [
+        "Iris.r"
+      ],
+      "triangles": 3248,
+      "center": [
+        -0.2974849045276642,
+        -0.09271832555532455,
+        0.7156382203102112
+      ],
+      "sha256": "103d8b5eff7ed26f25b579073345187b7684f6f04f805da24beb7d4f17abb886",
+      "status": "named source anatomy"
+    },
+    "LGN_R": {
+      "objects": [
+        "Lateral geniculate body.r"
+      ],
+      "triangles": 604,
+      "center": [
+        -0.18210333585739136,
+        0.10874702036380768,
+        -0.11093561351299286
+      ],
+      "sha256": "1c86df9328e31e4f7f4285952d1ce8252cfbbbd584f1796f1b9bc473e2aa16be",
+      "status": "named source anatomy"
+    },
+    "SC_R": {
+      "objects": [
+        "Superior colliculus.r"
+      ],
+      "triangles": 458,
+      "center": [
+        -0.08268319815397263,
+        0.1113995760679245,
+        -0.14412929117679596
+      ],
+      "sha256": "0259a8b84be46e835328ad695525ab4698a80dfb10d9c395274ccef081015394",
+      "status": "named source anatomy"
+    },
+    "tract_R": {
+      "objects": [
+        "Optic tract.r"
+      ],
+      "triangles": 2332,
+      "center": [
+        -0.12066741287708282,
+        0.1071619987487793,
+        0.015596091747283936
+      ],
+      "sha256": "19aa2ba1ecd1962b389b9485e6b099d671dfcae5c4e6639b1623947f0f151273",
+      "status": "named source anatomy"
+    },
+    "V1_R": {
+      "objects": [
+        "Calcarine sulcus.r"
+      ],
+      "triangles": 872,
+      "center": [
+        -0.12132049351930618,
+        0.16541658341884613,
+        -0.6101192235946655
+      ],
+      "sha256": "f4b1ffe2e8eced7f787efc27ee3a339cbc5aab6629c68abdb2451f2300f04f95",
+      "status": "approximate anatomical proxy"
+    },
+    "FEF_R": {
+      "objects": [
+        "Middle frontal gyrus.r"
+      ],
+      "triangles": 2277,
+      "center": [
+        -0.3037766218185425,
+        0.5621029138565063,
+        0.3350294530391693
+      ],
+      "sha256": "eab4e29f1ea053fd7187619cea3a369638260248ef78d1c21230d9d3a6c78521",
+      "status": "approximate anatomical proxy"
+    },
+    "IPS_R": {
+      "objects": [
+        "Intraparietal sulcus.r"
+      ],
+      "triangles": 852,
+      "center": [
+        -0.270339697599411,
+        0.5734454393386841,
+        -0.5354211926460266
+      ],
+      "sha256": "9c0c06ff2741f252a27e2cb5bc48608166482ee67aa16222f83f35c30d0ba2da",
+      "status": "named source anatomy"
+    },
+    "MT_MST_R": {
+      "objects": [
+        "Middle temporal gyrus.r"
+      ],
+      "triangles": 1312,
+      "center": [
+        -0.5074570178985596,
+        0.1325504183769226,
+        -0.2054480016231537
+      ],
+      "sha256": "3843d0c354cad9ff0882ac352effd7fb42f468d93ee1669c5a572bb7bb5e625a",
+      "status": "approximate anatomical proxy"
+    },
+    "chiasm": {
+      "objects": [
+        "Optic chiasm.l",
+        "Optic chiasm.r"
+      ],
+      "triangles": 1780,
+      "center": [
+        0.0005005635321140289,
+        0.10693059861660004,
+        0.17093893885612488
+      ],
+      "sha256": "79e29f8f93dd256c4a717b93c2fc81151bbe8b32835ba4d9e0eec9c8212a2514",
+      "status": "named source anatomy"
+    },
+    "brainstem": {
+      "objects": [
+        "Medulla oblongata.l",
+        "Medulla oblongata.r",
+        "Midbrain.l",
+        "Midbrain.r",
+        "Pons.l",
+        "Pons.r"
+      ],
+      "triangles": 44686,
+      "center": [
+        0.0005005523562431335,
+        -0.21748149394989014,
+        -0.11830897629261017
+      ],
+      "sha256": "b1f4a75ba4628983bdef0002c8c48c1c4bf20d639e0e2ed07b682955d26ba89f",
+      "status": "named source anatomy"
+    },
+    "cerebellum": {
+      "objects": [
+        "Anterior quadrangular lobule.l",
+        "Anterior quadrangular lobule.r",
+        "Base of peduncle.l",
+        "Base of peduncle.r",
+        "Biventral lobule.l",
+        "Biventral lobule.r",
+        "Central lobule",
+        "Culmen",
+        "Declive",
+        "Flocculus.l",
+        "Flocculus.r",
+        "Folium of vermis",
+        "Gracile lobule.l",
+        "Gracile lobule.r",
+        "Inferior semilunar lobule.l",
+        "Inferior semilunar lobule.r",
+        "Lingula of cerebellum",
+        "Nodule of vermis",
+        "Peduncle of flocculus.l",
+        "Peduncle of flocculus.r",
+        "Posterior quadrangular lobule.l",
+        "Posterior quadrangular lobule.r",
+        "Pyramis of vermis",
+        "Superior cerebellar peduncle.l",
+        "Superior cerebellar peduncle.r",
+        "Superior semilunar lobule.l",
+        "Superior semilunar lobule.r",
+        "Tonsil of cerebellum.l",
+        "Tonsil of cerebellum.r",
+        "Tuber of vermis",
+        "Uvula of vermis",
+        "Wing of central lobule.l",
+        "Wing of central lobule.r"
+      ],
+      "triangles": 150509,
+      "center": [
+        0.000499919056892395,
+        -0.11386403441429138,
+        -0.31811362504959106
+      ],
+      "sha256": "240e059a737c390ad783043b6e35a1c24ffb245e25ec393dcebdb1bf580e7398",
+      "status": "named source anatomy"
+    }
+  },
+  "unavailable": [
+    "SEF",
+    "LC",
+    "pretectal/EW",
+    "optic nerve (no verified paired mesh selected)"
+  ]
+}
